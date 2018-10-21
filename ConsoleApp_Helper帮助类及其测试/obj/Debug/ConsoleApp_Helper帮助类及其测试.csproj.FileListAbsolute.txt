@@ -1,0 +1,16 @@
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\bin\Debug\ConsoleApp_Helper帮助类及其测试.exe.config
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\bin\Debug\ConsoleApp_Helper帮助类及其测试.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\bin\Debug\ConsoleApp_Helper帮助类及其测试.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\obj\Debug\ConsoleApp_Helper帮助类及其测试.csprojResolveAssemblyReference.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\obj\Debug\ConsoleApp_Helper帮助类及其测试.csproj.CoreCompileInputs.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\obj\Debug\ConsoleApp_Helper帮助类及其测试.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\obj\Debug\ConsoleApp_Helper帮助类及其测试.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\bin\Debug\ThoughtWorks.QRCode.dll
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\bin\Debug\TopSdk.dll
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\bin\Debug\zxing.dll
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\bin\Debug\zxing.presentation.dll
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\bin\Debug\zxing.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\bin\Debug\zxing.presentation.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\bin\Debug\zxing.presentation.xml
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\obj\Debug\ConsoleApp_Helper帮助类及其测试.TiaoXingMaTestForm.resources
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_Helper帮助类及其测试\obj\Debug\ConsoleApp_Helper帮助类及其测试.csproj.GenerateResource.Cache

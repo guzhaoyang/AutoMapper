@@ -1,0 +1,8 @@
+F:\StudyAndPractice\C#面向对象练习\面向对象练习\EFModel\obj\Debug\EFModel.csprojResolveAssemblyReference.cache
+F:\StudyAndPractice\C#面向对象练习\面向对象练习\EFModel\bin\Debug\EFModel.dll.config
+F:\StudyAndPractice\C#面向对象练习\面向对象练习\EFModel\bin\Debug\EFModel.dll
+F:\StudyAndPractice\C#面向对象练习\面向对象练习\EFModel\bin\Debug\EFModel.pdb
+F:\StudyAndPractice\C#面向对象练习\面向对象练习\EFModel\bin\Debug\EntityFramework.dll
+F:\StudyAndPractice\C#面向对象练习\面向对象练习\EFModel\bin\Debug\EntityFramework.xml
+F:\StudyAndPractice\C#面向对象练习\面向对象练习\EFModel\obj\Debug\EFModel.dll
+F:\StudyAndPractice\C#面向对象练习\面向对象练习\EFModel\obj\Debug\EFModel.pdb

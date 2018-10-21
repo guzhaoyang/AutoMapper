@@ -1,0 +1,10 @@
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp2\obj\Debug\ConsoleApp2.csprojResolveAssemblyReference.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
+F:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+F:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+F:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp2\obj\Debug\ConsoleApp2.pdb

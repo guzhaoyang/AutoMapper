@@ -1,0 +1,7 @@
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_泛型类练习\bin\Debug\ConsoleApp_泛型类练习.exe.config
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_泛型类练习\bin\Debug\ConsoleApp_泛型类练习.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_泛型类练习\bin\Debug\ConsoleApp_泛型类练习.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_泛型类练习\obj\Debug\ConsoleApp_泛型类练习.csprojResolveAssemblyReference.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_泛型类练习\obj\Debug\ConsoleApp_泛型类练习.csproj.CoreCompileInputs.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_泛型类练习\obj\Debug\ConsoleApp_泛型类练习.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_泛型类练习\obj\Debug\ConsoleApp_泛型类练习.pdb

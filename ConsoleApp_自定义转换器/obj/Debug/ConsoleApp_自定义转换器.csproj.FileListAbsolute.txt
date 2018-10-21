@@ -1,0 +1,12 @@
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_自定义转换器\bin\Debug\ConsoleApp_自定义转换器.exe.config
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_自定义转换器\bin\Debug\ConsoleApp_自定义转换器.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_自定义转换器\bin\Debug\ConsoleApp_自定义转换器.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_自定义转换器\bin\Debug\AutoMapper.dll
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_自定义转换器\bin\Debug\System.ValueTuple.dll
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_自定义转换器\bin\Debug\AutoMapper.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_自定义转换器\bin\Debug\AutoMapper.xml
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_自定义转换器\bin\Debug\System.ValueTuple.xml
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_自定义转换器\obj\Debug\ConsoleApp_自定义转换器.csprojResolveAssemblyReference.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_自定义转换器\obj\Debug\ConsoleApp_自定义转换器.csproj.CoreCompileInputs.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_自定义转换器\obj\Debug\ConsoleApp_自定义转换器.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_自定义转换器\obj\Debug\ConsoleApp_自定义转换器.pdb

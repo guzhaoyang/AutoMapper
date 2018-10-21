@@ -1,0 +1,7 @@
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_依赖注入\obj\Debug\ConsoleApp_依赖注入.csprojResolveAssemblyReference.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_依赖注入\obj\Debug\ConsoleApp_依赖注入.csproj.CoreCompileInputs.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_依赖注入\bin\Debug\ConsoleApp_依赖注入.exe.config
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_依赖注入\bin\Debug\ConsoleApp_依赖注入.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_依赖注入\bin\Debug\ConsoleApp_依赖注入.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_依赖注入\obj\Debug\ConsoleApp_依赖注入.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_依赖注入\obj\Debug\ConsoleApp_依赖注入.pdb

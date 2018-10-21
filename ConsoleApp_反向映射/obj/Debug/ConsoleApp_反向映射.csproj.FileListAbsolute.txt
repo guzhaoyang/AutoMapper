@@ -1,0 +1,12 @@
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_反向映射\bin\Debug\ConsoleApp_反向映射.exe.config
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_反向映射\bin\Debug\ConsoleApp_反向映射.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_反向映射\bin\Debug\ConsoleApp_反向映射.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_反向映射\bin\Debug\AutoMapper.dll
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_反向映射\bin\Debug\System.ValueTuple.dll
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_反向映射\bin\Debug\AutoMapper.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_反向映射\bin\Debug\AutoMapper.xml
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_反向映射\bin\Debug\System.ValueTuple.xml
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_反向映射\obj\Debug\ConsoleApp_反向映射.csprojResolveAssemblyReference.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_反向映射\obj\Debug\ConsoleApp_反向映射.csproj.CoreCompileInputs.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_反向映射\obj\Debug\ConsoleApp_反向映射.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_反向映射\obj\Debug\ConsoleApp_反向映射.pdb

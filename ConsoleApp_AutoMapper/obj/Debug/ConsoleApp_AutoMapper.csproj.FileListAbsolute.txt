@@ -1,0 +1,15 @@
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\bin\Debug\ConsoleApp_AutoMapper.exe.config
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\bin\Debug\ConsoleApp_AutoMapper.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\bin\Debug\ConsoleApp_AutoMapper.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\bin\Debug\AutoMapper.dll
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\bin\Debug\System.ValueTuple.dll
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\bin\Debug\AutoMapper.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\bin\Debug\AutoMapper.xml
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\bin\Debug\System.ValueTuple.xml
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\obj\Debug\ConsoleApp_AutoMapper.csprojResolveAssemblyReference.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\obj\Debug\ConsoleApp_AutoMapper.csproj.CoreCompileInputs.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\obj\Debug\ConsoleApp_AutoMapper.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\obj\Debug\ConsoleApp_AutoMapper.pdb
+F:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\bin\Debug\ConsoleApp_AutoMapper.exe.config
+F:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\obj\Debug\ConsoleApp_AutoMapper.exe
+F:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_AutoMapper\obj\Debug\ConsoleApp_AutoMapper.pdb

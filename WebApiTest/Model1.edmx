@@ -1,0 +1,3049 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TestDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccountLogin">
+          <Key>
+            <PropertyRef Name="LoginID" />
+          </Key>
+          <Property Name="LoginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoginName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LoginPwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="RecentLoginTime" Type="datetime" />
+          <Property Name="AccountTypeID" Type="int" />
+          <Property Name="RandomCode" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar(max)" />
+          <Property Name="CreateWay" Type="varchar" MaxLength="50" />
+          <Property Name="Alias" Type="nvarchar(max)" />
+          <Property Name="MobilePlatform" Type="int" />
+          <Property Name="LoginState" Type="int" />
+          <Property Name="Gmd" Type="nvarchar" MaxLength="50" />
+          <Property Name="OverdueTime" Type="datetime" />
+          <Property Name="NickName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AccountType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeDescription" Type="nvarchar(max)" />
+          <Property Name="Type" Type="int" />
+          <Property Name="TypeBelongsID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BillType" Type="int" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="SettlementType" Type="int" />
+          <Property Name="SettlementTime" Type="datetime" />
+          <Property Name="ChargeCurrency" Type="int" />
+          <Property Name="ActualCost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ActualDiscount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SettlementProperty" Type="int" />
+          <Property Name="OccTime" Type="datetime" />
+          <Property Name="SettlementState" Type="int" />
+        </EntityType>
+        <EntityType Name="BillCheckRule">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EnterpriseID" Type="int" />
+          <Property Name="CheckRule1" Type="int" />
+          <Property Name="CheckRule2" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="books">
+          <Key>
+            <PropertyRef Name="book_id" />
+          </Key>
+          <Property Name="book_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="book_name" Type="varchar" MaxLength="20" />
+          <Property Name="book_price" Type="float" />
+          <Property Name="book_auth" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="BusinessClass">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="RuleID" Type="int" />
+        </EntityType>
+        <EntityType Name="ClientSettlement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RelationshipID" Type="int" />
+          <Property Name="TypeID" Type="int" />
+          <Property Name="RuleList" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CompanyInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar(max)" />
+          <Property Name="Scale" Type="int" />
+          <Property Name="Nature" Type="int" />
+          <Property Name="FoundingTime" Type="datetime" />
+          <Property Name="Industry" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChildIndustry" Type="nvarchar" MaxLength="50" />
+          <Property Name="RegisteredCapital" Type="nvarchar" MaxLength="50" />
+          <Property Name="Province" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Region" Type="nvarchar" MaxLength="50" />
+          <Property Name="JoinTime" Type="datetime" />
+          <Property Name="ContactNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="ExtendInfoPath" Type="nvarchar(max)" />
+          <Property Name="LogoPath" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ConfigInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicationTime" Type="datetime" />
+          <Property Name="StateUpdateTime" Type="datetime" />
+          <Property Name="ConfigState" Type="int" Nullable="false" />
+          <Property Name="IsRead" Type="int" />
+        </EntityType>
+        <EntityType Name="CooperateRegistInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeBelongsID" Type="int" />
+        </EntityType>
+        <EntityType Name="CooperateServiceInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RelationshipID" Type="int" Nullable="false" />
+          <Property Name="RelationshipType" Type="int" Nullable="false" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CRUDModel">
+          <Key>
+            <PropertyRef Name="课程号" />
+          </Key>
+          <Property Name="课程号" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="课程名" Type="nchar" MaxLength="20" />
+          <Property Name="学分" Type="int" />
+          <Property Name="备注" Type="text" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UnitID" Type="int" Nullable="false" />
+          <Property Name="TypeBelongsID" Type="int" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpLevelDepartmentID" Type="int" />
+          <Property Name="FoundingTime" Type="datetime" />
+          <Property Name="AddTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Driver">
+          <Key>
+            <PropertyRef Name="DriverID" />
+          </Key>
+          <Property Name="DriverID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="int" />
+          <Property Name="StaffID" Type="int" />
+          <Property Name="DrivingAge" Type="int" />
+          <Property Name="DrivingLicenseTypeID" Type="int" />
+          <Property Name="DriverPhotoPath" Type="nvarchar(max)" />
+          <Property Name="EnableBusinessClass" Type="nvarchar(max)" />
+          <Property Name="IsExistDrunkDrivingRecord" Type="int" />
+          <Property Name="WPDriverBelong" Type="int" />
+          <Property Name="WPGovLeaseID" Type="int" />
+          <Property Name="WPDriverDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DrivingLicenseType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DriverLevel" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ELRelationship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CooperateRegID" Type="int" />
+          <Property Name="EnterpriseID" Type="int" />
+          <Property Name="LeasingCompanyID" Type="int" />
+          <Property Name="ApplicationPartyTBID" Type="int" />
+          <Property Name="ConfigInfoID" Type="int" />
+        </EntityType>
+        <EntityType Name="Enterprise">
+          <Key>
+            <PropertyRef Name="EnterpriseID" />
+          </Key>
+          <Property Name="EnterpriseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyInfoID" Type="int" />
+        </EntityType>
+        <EntityType Name="EnterpriseBillCheck">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BillID" Type="int" />
+          <Property Name="ApprovalState" Type="int" />
+          <Property Name="IsConfirmCharge" Type="int" />
+          <Property Name="LastApprovalConfirmTime" Type="datetime" />
+          <Property Name="LastApprovalPersonID" Type="int" />
+          <Property Name="ApprovalPersonList" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="EnterpriseOrderCheck">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="ApprovalState" Type="int" Nullable="false" />
+          <Property Name="IsPass" Type="int" Nullable="false" />
+          <Property Name="LastApprovalTime" Type="datetime" />
+          <Property Name="LastApprovalPersonID" Type="int" />
+          <Property Name="ApprovalPersonList" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="EStaffOrderApproval">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="ApprovalPermit" Type="int" Nullable="false" />
+          <Property Name="PermissionEndTime" Type="datetime" Nullable="false" />
+          <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EStaffOrderPermission">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="OrderPermit" Type="int" />
+          <Property Name="BanTime" Type="datetime" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="UpdateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EStaffOrderRule">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="OrderBusinessClassList" Type="nvarchar(max)" />
+          <Property Name="OrderVehicleLevelList" Type="nvarchar(max)" />
+          <Property Name="IsDirToLeasingCompany" Type="int" />
+          <Property Name="OrderTime" Type="nvarchar(max)" />
+          <Property Name="SettlementTypeList" Type="varchar" MaxLength="50" />
+          <Property Name="CustomCycleLengthMax" Type="int" />
+          <Property Name="IsNeedApproval" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EStaffUseInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="Mileage" Type="nvarchar" MaxLength="50" />
+          <Property Name="ActualEndSite" Type="nvarchar(max)" />
+          <Property Name="IsConfirmTravel" Type="int" />
+          <Property Name="OccTime" Type="datetime" />
+          <Property Name="SupplementInfoDesc" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="EStaffUseVehicle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="IsPermitUse" Type="int" />
+          <Property Name="IsUsing" Type="int" />
+          <Property Name="VehicleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastUseTime" Type="datetime" />
+          <Property Name="NextUseTime" Type="datetime" />
+          <Property Name="CurMonthTimes" Type="int" />
+        </EntityType>
+        <EntityType Name="Information">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InfoType" Type="int" Nullable="false" />
+          <Property Name="InfoSenderID" Type="int" Nullable="false" />
+          <Property Name="SenderType" Type="int" Nullable="false" />
+          <Property Name="InfoRecverID" Type="int" Nullable="false" />
+          <Property Name="RecverType" Type="int" Nullable="false" />
+          <Property Name="InfoOperation" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="InfoDesc" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OccTime" Type="datetime" Nullable="false" />
+          <Property Name="SenderDelFlag" Type="int" />
+          <Property Name="RecverDelFlag" Type="int" />
+        </EntityType>
+        <EntityType Name="LCBillAutoConfirm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ELRelationshipID" Type="int" />
+          <Property Name="IsAutoConfirm" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="LCSettlementRule">
+          <Key>
+            <PropertyRef Name="IDme" />
+          </Key>
+          <Property Name="IDme" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LeasingCompanyID" Type="int" />
+          <Property Name="RuleID" Type="int" />
+          <Property Name="CustomCycleLengthMax" Type="int" />
+        </EntityType>
+        <EntityType Name="LCStaff">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserBaseID" Type="int" />
+          <Property Name="LeasingCompanyID" Type="int" />
+          <Property Name="StaffWorkInfoID" Type="int" />
+        </EntityType>
+        <EntityType Name="LCValuation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LeasingCompanyID" Type="int" />
+          <Property Name="ValuationCurrency" Type="int" />
+          <Property Name="FavorableCurrency" Type="int" />
+          <Property Name="ValuationFormula" Type="nvarchar(max)" />
+          <Property Name="BaseValuation" Type="float" Nullable="false" />
+          <Property Name="VehicleLevelValuation" Type="varchar(max)" />
+          <Property Name="VehicleTypeValuation" Type="varchar(max)" />
+          <Property Name="VehicleSLifeValuation" Type="varchar(max)" />
+          <Property Name="UVTimeValuation" Type="varchar(max)" />
+          <Property Name="UVDayValuation" Type="varchar(max)" />
+          <Property Name="UVBCValuation" Type="varchar(max)" />
+          <Property Name="ActivityStartTime" Type="datetime" />
+          <Property Name="ActivityEndTime" Type="datetime" />
+          <Property Name="ConsumeReductionRule" Type="varchar(max)" />
+          <Property Name="ActivityUVLevelFavorable" Type="varchar(max)" />
+          <Property Name="ActivityUVTypeFavorable" Type="varchar(max)" />
+          <Property Name="ActivityUVTimeFavorable" Type="varchar(max)" />
+          <Property Name="ActivityUVDayFavorable" Type="varchar(max)" />
+          <Property Name="UVBCFavorable" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="LeasingCompany">
+          <Key>
+            <PropertyRef Name="LeasingCompanyID" />
+          </Key>
+          <Property Name="LeasingCompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyInfoID" Type="int" Nullable="false" />
+          <Property Name="VehicleNum" Type="int" />
+          <Property Name="AvableVehicleNum" Type="int" />
+          <Property Name="DriverNum" Type="int" />
+          <Property Name="AvableDriverNum" Type="int" />
+          <Property Name="GroupID" Type="int" />
+        </EntityType>
+        <EntityType Name="LeasingCompanyGroup">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoginRelationship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountLoginID" Type="int" />
+          <Property Name="RoleID" Type="int" />
+          <Property Name="Type" Type="int" />
+        </EntityType>
+        <EntityType Name="LongRentDriverInfo">
+          <Key>
+            <PropertyRef Name="DriverID" />
+          </Key>
+          <Property Name="DriverID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LeasingCompanyID" Type="int" />
+          <Property Name="PLeasingCompanyID" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="StartTime" Type="datetime" />
+          <Property Name="EndTime" Type="datetime" />
+          <Property Name="PEnterpriseID" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="DriverNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="int" />
+        </EntityType>
+        <EntityType Name="LongRentVehicleInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LeasingCompanyID" Type="int" />
+          <Property Name="PLeasingCompanyID" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="StartTime" Type="datetime" />
+          <Property Name="EndTime" Type="datetime" />
+          <Property Name="PEnterpriseID" Type="int" />
+          <Property Name="LicenseNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="VehicleBelong" Type="int" />
+        </EntityType>
+        <EntityType Name="LPRelationship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CooperateRegID" Type="int" />
+          <Property Name="LeasingCompanyID" Type="int" />
+          <Property Name="PartnerLeasingCompanyID" Type="int" />
+          <Property Name="ApplicationPartyLCID" Type="int" />
+          <Property Name="ConfigInfoID" Type="int" />
+        </EntityType>
+        <EntityType Name="MenuList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="MenuItemName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ParentID" Type="int" Nullable="false" />
+          <Property Name="PageUrl" Type="nvarchar(max)" />
+          <Property Name="Sort" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OfflineBillCharge">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PayPartyID" Type="int" Nullable="false" />
+          <Property Name="ChargePartyType" Type="int" Nullable="false" />
+          <Property Name="ChargePartyID" Type="int" />
+          <Property Name="BillType" Type="int" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Currency" Type="int" Nullable="false" />
+          <Property Name="AmountDue" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ActualCost" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ActualDiscount" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="PayChargeTime" Type="datetime" Nullable="false" />
+          <Property Name="InDBTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderCheckRule">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EnterpriseID" Type="int" Nullable="false" />
+          <Property Name="CheckRule1" Type="int" />
+          <Property Name="CheckRule2" Type="int" />
+          <Property Name="CheckRule3" Type="int" />
+          <Property Name="UpdateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OrderImplementRule">
+          <Key>
+            <PropertyRef Name="RuleID" />
+          </Key>
+          <Property Name="RuleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RuleDescription" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderInfo">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UseCarInfoID" Type="int" Nullable="false" />
+          <Property Name="Applicant" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="StartTime" Type="datetime" />
+          <Property Name="CustomCycleLength" Type="int" />
+          <Property Name="OccTime" Type="datetime" />
+          <Property Name="IsValid" Type="int" />
+          <Property Name="VDRID" Type="int" />
+          <Property Name="OrderState" Type="int" />
+          <Property Name="OrderMode" Type="int" />
+          <Property Name="StateUpdateTime" Type="datetime" />
+          <Property Name="EContactStatue" Type="int" />
+          <Property Name="LContactStatue" Type="int" />
+          <Property Name="LVehicleOrigin" Type="int" />
+          <Property Name="EVehicleOrigin" Type="int" />
+          <Property Name="ActuallyVehicleID" Type="int" />
+          <Property Name="ActuallyDriverID" Type="int" />
+          <Property Name="OrderProperty" Type="int" />
+          <Property Name="ActualStartSite" Type="nvarchar(max)" />
+          <Property Name="ActualStartSitelongitude" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="ActualStartSitelatitude" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="ActualEndSite" Type="nvarchar(max)" />
+          <Property Name="ActualEndSitelongitude" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="ActualEndSitelatitude" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="StartKm" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="EndKm" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BillID" Type="int" />
+          <Property Name="CheckStatue" Type="int" Nullable="false" />
+          <Property Name="BillCheckStatue" Type="int" />
+          <Property Name="OrderCompanyID" Type="int" />
+          <Property Name="SupplierID" Type="int" />
+        </EntityType>
+        <EntityType Name="OrderLocation">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeBelongsID" Type="int" Nullable="false" />
+          <Property Name="Longitude" Type="varchar" MaxLength="50" />
+          <Property Name="Latitude" Type="varchar" MaxLength="50" />
+          <Property Name="LocPointName" Type="nvarchar(max)" />
+          <Property Name="RemainTime" Type="datetime" />
+          <Property Name="OccTime" Type="datetime" />
+          <Property Name="InitiativeReportOrNot" Type="int" Nullable="false" />
+          <Property Name="IsValid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderLocationHistory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="TypeBelongsID" Type="int" Nullable="false" />
+          <Property Name="Longitude" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Latitude" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LocPointName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OccTime" Type="datetime" />
+          <Property Name="InitiativeReportOrNot" Type="int" />
+          <Property Name="IsValid" Type="int" />
+        </EntityType>
+        <EntityType Name="OrderVehicleTravel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="OccTime" Type="datetime" Nullable="false" />
+          <Property Name="TollCharge" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OilCharge" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ParkingCharge" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OtherCharge" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OtherChargeDescription" Type="nvarchar(max)" />
+          <Property Name="OilMass" Type="nvarchar" MaxLength="50" />
+          <Property Name="Oil" Type="nvarchar" MaxLength="50" />
+          <Property Name="ParkingCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="TollCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="WaitingTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="TicketCount" Type="int" />
+          <Property Name="StoppingPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="WayPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="Overtime" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PlatformLogin">
+          <Key>
+            <PropertyRef Name="PLoginID" />
+          </Key>
+          <Property Name="PLoginID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PLoginPwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="RecentLoginTime" Type="datetime" />
+          <Property Name="AccountTypeID" Type="int" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UnitID" Type="int" Nullable="false" />
+          <Property Name="TypeBelongsID" Type="int" Nullable="false" />
+          <Property Name="PositionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AddTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SettlementRule">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RuleDescription" Type="varchar" MaxLength="50" />
+          <Property Name="CustomCycleLengthMax" Type="int" />
+        </EntityType>
+        <EntityType Name="ShowPermission">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuListID" Type="int" />
+          <Property Name="AccountTypeID" Type="int" />
+        </EntityType>
+        <EntityType Name="StaffWorkInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkAge" Type="int" />
+          <Property Name="DepartmentID" Type="int" />
+          <Property Name="PositionID" Type="int" />
+          <Property Name="UpLevelStaffID" Type="int" />
+          <Property Name="EntryTime" Type="datetime" />
+          <Property Name="DepartureTime" Type="datetime" />
+          <Property Name="InJobState" Type="int" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Station" Type="int" />
+        </EntityType>
+        <EntityType Name="TypeBelongs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UseCarInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UseVehicleMode" Type="int" />
+          <Property Name="Origin" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OriginLongitude" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="OriginLatitude" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Destination" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DestinationLongitude" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="DestinationLatitude" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="DepartTime" Type="datetime" Nullable="false" />
+          <Property Name="UseVehicleDate" Type="datetime" />
+          <Property Name="UseVehicleType" Type="int" Nullable="false" />
+          <Property Name="UseVehicleLevel" Type="int" />
+          <Property Name="UseVehicleSeatingCapacity" Type="int" />
+          <Property Name="SettlementType" Type="int" />
+          <Property Name="PersonNum" Type="int" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="Intend" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dartment" Type="nvarchar" MaxLength="50" />
+          <Property Name="Passenger" Type="nvarchar" MaxLength="50" />
+          <Property Name="Journey" Type="nvarchar" MaxLength="50" />
+          <Property Name="CarUseCompany" Type="nvarchar" MaxLength="50" />
+          <Property Name="PayModel" Type="int" />
+          <Property Name="TaskDesc" Type="nvarchar" MaxLength="50" />
+          <Property Name="StrikePrice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="OrderOffer" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CollectFees" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="PriceWay" Type="int" />
+          <Property Name="PreEndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UseCarInfo2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UseVehicleMode" Type="int" />
+          <Property Name="Origin" Type="nvarchar(max)" />
+          <Property Name="OriginLongitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="OriginLatitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="Destination" Type="nvarchar(max)" />
+          <Property Name="DestinationLongitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="DestinationLatitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="DepartTime" Type="datetime" />
+          <Property Name="UseVehicleDate" Type="datetime" />
+          <Property Name="UseVehicleType" Type="int" />
+          <Property Name="UseVehicleLevel" Type="int" />
+          <Property Name="UseVehicleSeatingCapacity" Type="int" />
+          <Property Name="SettlementType" Type="int" />
+          <Property Name="CustomCycleLength" Type="int" />
+          <Property Name="PersonNum" Type="int" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="Intend" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dartment" Type="nvarchar" MaxLength="50" />
+          <Property Name="Passenger" Type="nvarchar" MaxLength="50" />
+          <Property Name="Journey" Type="nvarchar" MaxLength="50" />
+          <Property Name="CarUseCompany" Type="nvarchar" MaxLength="50" />
+          <Property Name="PayModel" Type="int" />
+          <Property Name="VehicleOrigin" Type="int" />
+          <Property Name="TaskDesc" Type="nvarchar" MaxLength="50" />
+          <Property Name="StrikePrice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="OrderOffer" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CollectFees" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="PreEndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserType" Type="int" />
+          <Property Name="UserBaseID" Type="int" />
+          <Property Name="EnterpriseID" Type="int" />
+          <Property Name="StaffWorkInfoID" Type="int" />
+          <Property Name="UserPhotoPath" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UserBase">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="50" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Heitht" Type="float" />
+          <Property Name="Weitht" Type="float" />
+          <Property Name="Identification" Type="varchar" MaxLength="50" />
+          <Property Name="PhoneNum" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ValuationRulesInfo">
+          <Key>
+            <PropertyRef Name="ValuationRulesID" />
+          </Key>
+          <Property Name="ValuationRulesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BelongsLeaseID" Type="int" />
+          <Property Name="ValuationRulesName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ValuationObject" Type="nvarchar" MaxLength="50" />
+          <Property Name="ValuationTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="ServerDays" Type="nvarchar" MaxLength="50" />
+          <Property Name="ServerTime" Type="int" />
+          <Property Name="ServerMileage" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ExcessiveOvertimeUnitPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OverMileageCalculateWay" Type="int" />
+          <Property Name="SuperMileageUnitPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="RoadTollCalculateWay" Type="int" />
+          <Property Name="CustomersUsers" Type="nvarchar" MaxLength="50" />
+          <Property Name="Remarks" Type="nvarchar(max)" />
+          <Property Name="BaseRent" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ParkingFeeCalculateWay" Type="int" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Name="VehicleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LicenseNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="VehicleType" Type="int" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="VehicleModel" Type="nvarchar" MaxLength="50" />
+          <Property Name="VehicleSource" Type="nvarchar" MaxLength="50" />
+          <Property Name="Color" Type="nvarchar" MaxLength="50" />
+          <Property Name="VehicleBelong" Type="int" />
+          <Property Name="GovLeaseID" Type="int" />
+          <Property Name="VehicleDate" Type="datetime" />
+          <Property Name="WPVehicleBelong" Type="int" />
+          <Property Name="WPGovLeaseID" Type="int" />
+          <Property Name="WPVehicleDate" Type="datetime" />
+          <Property Name="SeatingCapacity" Type="int" />
+          <Property Name="FuelType" Type="nvarchar" MaxLength="50" />
+          <Property Name="FuelCost" Type="nvarchar" MaxLength="50" />
+          <Property Name="GasDisplacement" Type="nvarchar" MaxLength="50" />
+          <Property Name="ServicedLife" Type="int" />
+          <Property Name="Score" Type="int" />
+          <Property Name="Level" Type="int" />
+          <Property Name="RemainValue" Type="int" />
+          <Property Name="VehiclePhotoPath" Type="nvarchar(max)" />
+          <Property Name="EnableBusinessClassList" Type="nvarchar(max)" />
+          <Property Name="VehicleProperty" Type="int" />
+        </EntityType>
+        <EntityType Name="VehicleBrandValuation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VehicleBelong" Type="int" />
+          <Property Name="GovLeaseID" Type="int" />
+          <Property Name="VehicleBrand" Type="nvarchar" MaxLength="50" />
+          <Property Name="Valuation" Type="float" />
+          <Property Name="ActivityFavorable" Type="float" />
+        </EntityType>
+        <EntityType Name="VehicleDriverRelationship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="DriverID" Type="int" />
+          <Property Name="TypeBelongsID" Type="int" />
+          <Property Name="VehicleType" Type="int" />
+          <Property Name="DriverType" Type="int" />
+          <Property Name="BindingTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="VehicleDriverWorking">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UnitID" Type="int" Nullable="false" />
+          <Property Name="VehicleDriverType" Type="int" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="TypeBelongsID" Type="int" />
+          <Property Name="ServingTime" Type="int" Nullable="false" />
+          <Property Name="ServingDay" Type="int" />
+          <Property Name="WorkStatus" Type="int" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="VehicleFixedPay">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Name="VehicleID" Type="int" Nullable="false" />
+          <Property Name="StaffID" Type="int" Nullable="false" />
+          <Property Name="PayCurrency" Type="int" />
+          <Property Name="InsurancePayInfo" Type="nvarchar" MaxLength="50" />
+          <Property Name="TrafficForcePayInfo" Type="nvarchar" MaxLength="50" />
+          <Property Name="VehicleShipPayInfo" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherPayInfo" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtherPayDesc" Type="nvarchar(max)" />
+          <Property Name="PayDate" Type="datetime" />
+          <Property Name="PayCheckDate" Type="datetime" />
+          <Property Name="NextPayDate" Type="datetime" />
+          <Property Name="PayState" Type="int" Nullable="false" />
+          <Property Name="PayDescription" Type="nvarchar(max)" />
+          <Property Name="RemindOperateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="VehicleHandoverRecord">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="VehicleID" Type="int" Nullable="false" />
+          <Property Name="LastDriverID" Type="int" Nullable="false" />
+          <Property Name="NowDriverID" Type="int" Nullable="false" />
+          <Property Name="HandoverTime" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="WorkTableDisplay">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoginID" Type="int" />
+          <Property Name="MenuListID" Type="int" />
+        </EntityType>
+        <EntityType Name="成绩表">
+          <Key>
+            <PropertyRef Name="学号" />
+            <PropertyRef Name="教师编号" />
+            <PropertyRef Name="课程号" />
+          </Key>
+          <Property Name="学号" Type="int" Nullable="false" />
+          <Property Name="教师编号" Type="int" Nullable="false" />
+          <Property Name="课程号" Type="tinyint" Nullable="false" />
+          <Property Name="分数" Type="decimal" Precision="4" Scale="1" />
+        </EntityType>
+        <EntityType Name="教师表">
+          <Key>
+            <PropertyRef Name="教师编号" />
+          </Key>
+          <Property Name="教师编号" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="姓名" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="出生日期" Type="smalldatetime" Nullable="false" />
+          <Property Name="性别" Type="char" MaxLength="2" />
+          <Property Name="院系编号" Type="tinyint" />
+          <Property Name="学历" Type="char" MaxLength="10" />
+          <Property Name="备注" Type="text" />
+        </EntityType>
+        <EntityType Name="课程表">
+          <Key>
+            <PropertyRef Name="课程号" />
+          </Key>
+          <Property Name="课程号" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="课程名" Type="nchar" MaxLength="20" />
+          <Property Name="学分" Type="int" />
+          <Property Name="备注" Type="text" />
+        </EntityType>
+        <EntityType Name="学生表">
+          <Key>
+            <PropertyRef Name="学号" />
+          </Key>
+          <Property Name="学号" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="姓名" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="性别" Type="char" MaxLength="2" />
+          <Property Name="出生日期" Type="smalldatetime" />
+          <Property Name="院系编号" Type="tinyint" Nullable="false" />
+          <Property Name="专业编号" Type="tinyint" Nullable="false" />
+          <Property Name="出生地" Type="char" MaxLength="10" />
+          <Property Name="政治面貌" Type="nchar" MaxLength="6" />
+          <Property Name="备注" Type="text" />
+        </EntityType>
+        <EntityType Name="学生课程表">
+          <Key>
+            <PropertyRef Name="课程号" />
+          </Key>
+          <Property Name="课程号" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="课程名" Type="char" MaxLength="20" />
+          <Property Name="学分" Type="tinyint" />
+          <Property Name="备注" Type="text" />
+        </EntityType>
+        <Function Name="book_page" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TableName" Type="varchar" Mode="In" />
+          <Parameter Name="ReFieldsStr" Type="varchar" Mode="In" />
+          <Parameter Name="OrderString" Type="varchar" Mode="In" />
+          <Parameter Name="WhereString" Type="varchar" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="PageIndex" Type="int" Mode="In" />
+          <Parameter Name="TotalRecord" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="book_temp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="charBooks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="bookAuth" Type="varchar" Mode="In" />
+          <Parameter Name="bookName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="charBooks1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="bookAuth" Type="varchar" Mode="In" />
+          <Parameter Name="bookName" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="func" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getBookId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="bookAuth" Type="varchar" Mode="In" />
+          <Parameter Name="bookId" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="GetName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="type" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="proc_get_allBooks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="searchBooks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="bookID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="searchBooks1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="bookID" Type="int" Mode="In" />
+          <Parameter Name="bookAuth" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SPLIT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="inputStr" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="val" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <EntityContainer Name="TestDBModelStoreContainer">
+          <EntitySet Name="AccountLogin" EntityType="Self.AccountLogin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountType" EntityType="Self.AccountType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BillCheckRule" EntityType="Self.BillCheckRule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="books" EntityType="Self.books" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BusinessClass" EntityType="Self.BusinessClass" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientSettlement" EntityType="Self.ClientSettlement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanyInfo" EntityType="Self.CompanyInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ConfigInfo" EntityType="Self.ConfigInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CooperateRegistInfo" EntityType="Self.CooperateRegistInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CooperateServiceInfo" EntityType="Self.CooperateServiceInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRUDModel" EntityType="Self.CRUDModel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Driver" EntityType="Self.Driver" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DrivingLicenseType" EntityType="Self.DrivingLicenseType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ELRelationship" EntityType="Self.ELRelationship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Enterprise" EntityType="Self.Enterprise" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EnterpriseBillCheck" EntityType="Self.EnterpriseBillCheck" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EnterpriseOrderCheck" EntityType="Self.EnterpriseOrderCheck" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EStaffOrderApproval" EntityType="Self.EStaffOrderApproval" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EStaffOrderPermission" EntityType="Self.EStaffOrderPermission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EStaffOrderRule" EntityType="Self.EStaffOrderRule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EStaffUseInfo" EntityType="Self.EStaffUseInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EStaffUseVehicle" EntityType="Self.EStaffUseVehicle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Information" EntityType="Self.Information" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LCBillAutoConfirm" EntityType="Self.LCBillAutoConfirm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LCSettlementRule" EntityType="Self.LCSettlementRule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LCStaff" EntityType="Self.LCStaff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LCValuation" EntityType="Self.LCValuation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LeasingCompany" EntityType="Self.LeasingCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LeasingCompanyGroup" EntityType="Self.LeasingCompanyGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginRelationship" EntityType="Self.LoginRelationship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LongRentDriverInfo" EntityType="Self.LongRentDriverInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LongRentVehicleInfo" EntityType="Self.LongRentVehicleInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LPRelationship" EntityType="Self.LPRelationship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MenuList" EntityType="Self.MenuList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OfflineBillCharge" EntityType="Self.OfflineBillCharge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderCheckRule" EntityType="Self.OrderCheckRule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderImplementRule" EntityType="Self.OrderImplementRule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderInfo" EntityType="Self.OrderInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderLocation" EntityType="Self.OrderLocation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderLocationHistory" EntityType="Self.OrderLocationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderVehicleTravel" EntityType="Self.OrderVehicleTravel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlatformLogin" EntityType="Self.PlatformLogin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SettlementRule" EntityType="Self.SettlementRule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShowPermission" EntityType="Self.ShowPermission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StaffWorkInfo" EntityType="Self.StaffWorkInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeBelongs" EntityType="Self.TypeBelongs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UseCarInfo" EntityType="Self.UseCarInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UseCarInfo2" EntityType="Self.UseCarInfo2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserBase" EntityType="Self.UserBase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ValuationRulesInfo" EntityType="Self.ValuationRulesInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicle" EntityType="Self.Vehicle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehicleBrandValuation" EntityType="Self.VehicleBrandValuation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehicleDriverRelationship" EntityType="Self.VehicleDriverRelationship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehicleDriverWorking" EntityType="Self.VehicleDriverWorking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehicleFixedPay" EntityType="Self.VehicleFixedPay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehicleHandoverRecord" EntityType="Self.VehicleHandoverRecord" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkTableDisplay" EntityType="Self.WorkTableDisplay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="成绩表" EntityType="Self.成绩表" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="教师表" EntityType="Self.教师表" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="课程表" EntityType="Self.课程表" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="学生表" EntityType="Self.学生表" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="学生课程表" EntityType="Self.学生课程表" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TestDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="SPLIT_Result">
+          <Property Name="val" Type="Int32" />
+        </ComplexType>
+        <EntityType Name="AccountLogin">
+          <Key>
+            <PropertyRef Name="LoginID" />
+          </Key>
+          <Property Name="LoginID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LoginPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="RecentLoginTime" Type="DateTime" Precision="3" />
+          <Property Name="AccountTypeID" Type="Int32" />
+          <Property Name="RandomCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreateWay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Alias" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MobilePlatform" Type="Int32" />
+          <Property Name="LoginState" Type="Int32" />
+          <Property Name="Gmd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OverdueTime" Type="DateTime" Precision="3" />
+          <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AccountType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="TypeBelongsID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BillType" Type="Int32" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="SettlementType" Type="Int32" />
+          <Property Name="SettlementTime" Type="DateTime" Precision="3" />
+          <Property Name="ChargeCurrency" Type="Int32" />
+          <Property Name="ActualCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ActualDiscount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SettlementProperty" Type="Int32" />
+          <Property Name="OccTime" Type="DateTime" Precision="3" />
+          <Property Name="SettlementState" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BillCheckRule">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EnterpriseID" Type="Int32" />
+          <Property Name="CheckRule1" Type="Int32" />
+          <Property Name="CheckRule2" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="books">
+          <Key>
+            <PropertyRef Name="book_id" />
+          </Key>
+          <Property Name="book_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="book_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="book_price" Type="Double" />
+          <Property Name="book_auth" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BusinessClass">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RuleID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ClientSettlement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RelationshipID" Type="Int32" />
+          <Property Name="TypeID" Type="Int32" />
+          <Property Name="RuleList" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CompanyInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Scale" Type="Int32" />
+          <Property Name="Nature" Type="Int32" />
+          <Property Name="FoundingTime" Type="DateTime" Precision="3" />
+          <Property Name="Industry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChildIndustry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RegisteredCapital" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Province" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Region" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JoinTime" Type="DateTime" Precision="3" />
+          <Property Name="ContactNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ExtendInfoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LogoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ConfigInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationTime" Type="DateTime" Precision="3" />
+          <Property Name="StateUpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="ConfigState" Type="Int32" Nullable="false" />
+          <Property Name="IsRead" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CooperateRegistInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeBelongsID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CooperateServiceInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RelationshipID" Type="Int32" Nullable="false" />
+          <Property Name="RelationshipType" Type="Int32" Nullable="false" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CRUDModel">
+          <Key>
+            <PropertyRef Name="课程号" />
+          </Key>
+          <Property Name="课程号" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="课程名" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="学分" Type="Int32" />
+          <Property Name="备注" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnitID" Type="Int32" Nullable="false" />
+          <Property Name="TypeBelongsID" Type="Int32" />
+          <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpLevelDepartmentID" Type="Int32" />
+          <Property Name="FoundingTime" Type="DateTime" Precision="3" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Driver">
+          <Key>
+            <PropertyRef Name="DriverID" />
+          </Key>
+          <Property Name="DriverID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="StaffID" Type="Int32" />
+          <Property Name="DrivingAge" Type="Int32" />
+          <Property Name="DrivingLicenseTypeID" Type="Int32" />
+          <Property Name="DriverPhotoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EnableBusinessClass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsExistDrunkDrivingRecord" Type="Int32" />
+          <Property Name="WPDriverBelong" Type="Int32" />
+          <Property Name="WPGovLeaseID" Type="Int32" />
+          <Property Name="WPDriverDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="DrivingLicenseType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DriverLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ELRelationship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CooperateRegID" Type="Int32" />
+          <Property Name="EnterpriseID" Type="Int32" />
+          <Property Name="LeasingCompanyID" Type="Int32" />
+          <Property Name="ApplicationPartyTBID" Type="Int32" />
+          <Property Name="ConfigInfoID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Enterprise">
+          <Key>
+            <PropertyRef Name="EnterpriseID" />
+          </Key>
+          <Property Name="EnterpriseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyInfoID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EnterpriseBillCheck">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BillID" Type="Int32" />
+          <Property Name="ApprovalState" Type="Int32" />
+          <Property Name="IsConfirmCharge" Type="Int32" />
+          <Property Name="LastApprovalConfirmTime" Type="DateTime" Precision="3" />
+          <Property Name="LastApprovalPersonID" Type="Int32" />
+          <Property Name="ApprovalPersonList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EnterpriseOrderCheck">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="ApprovalState" Type="Int32" Nullable="false" />
+          <Property Name="IsPass" Type="Int32" Nullable="false" />
+          <Property Name="LastApprovalTime" Type="DateTime" Precision="3" />
+          <Property Name="LastApprovalPersonID" Type="Int32" />
+          <Property Name="ApprovalPersonList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EStaffOrderApproval">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="ApprovalPermit" Type="Int32" Nullable="false" />
+          <Property Name="PermissionEndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="EStaffOrderPermission">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="OrderPermit" Type="Int32" />
+          <Property Name="BanTime" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="EStaffOrderRule">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="OrderBusinessClassList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrderVehicleLevelList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDirToLeasingCompany" Type="Int32" />
+          <Property Name="OrderTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SettlementTypeList" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomCycleLengthMax" Type="Int32" />
+          <Property Name="IsNeedApproval" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="EStaffUseInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="Mileage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActualEndSite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsConfirmTravel" Type="Int32" />
+          <Property Name="OccTime" Type="DateTime" Precision="3" />
+          <Property Name="SupplementInfoDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EStaffUseVehicle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="IsPermitUse" Type="Int32" />
+          <Property Name="IsUsing" Type="Int32" />
+          <Property Name="VehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastUseTime" Type="DateTime" Precision="3" />
+          <Property Name="NextUseTime" Type="DateTime" Precision="3" />
+          <Property Name="CurMonthTimes" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Information">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InfoType" Type="Int32" Nullable="false" />
+          <Property Name="InfoSenderID" Type="Int32" Nullable="false" />
+          <Property Name="SenderType" Type="Int32" Nullable="false" />
+          <Property Name="InfoRecverID" Type="Int32" Nullable="false" />
+          <Property Name="RecverType" Type="Int32" Nullable="false" />
+          <Property Name="InfoOperation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InfoDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OccTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SenderDelFlag" Type="Int32" />
+          <Property Name="RecverDelFlag" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LCBillAutoConfirm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ELRelationshipID" Type="Int32" />
+          <Property Name="IsAutoConfirm" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="LCSettlementRule">
+          <Key>
+            <PropertyRef Name="IDme" />
+          </Key>
+          <Property Name="IDme" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LeasingCompanyID" Type="Int32" />
+          <Property Name="RuleID" Type="Int32" />
+          <Property Name="CustomCycleLengthMax" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LCStaff">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserBaseID" Type="Int32" />
+          <Property Name="LeasingCompanyID" Type="Int32" />
+          <Property Name="StaffWorkInfoID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LCValuation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LeasingCompanyID" Type="Int32" />
+          <Property Name="ValuationCurrency" Type="Int32" />
+          <Property Name="FavorableCurrency" Type="Int32" />
+          <Property Name="ValuationFormula" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BaseValuation" Type="Double" Nullable="false" />
+          <Property Name="VehicleLevelValuation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleTypeValuation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleSLifeValuation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UVTimeValuation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UVDayValuation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UVBCValuation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ActivityStartTime" Type="DateTime" Precision="3" />
+          <Property Name="ActivityEndTime" Type="DateTime" Precision="3" />
+          <Property Name="ConsumeReductionRule" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ActivityUVLevelFavorable" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ActivityUVTypeFavorable" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ActivityUVTimeFavorable" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ActivityUVDayFavorable" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UVBCFavorable" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LeasingCompany">
+          <Key>
+            <PropertyRef Name="LeasingCompanyID" />
+          </Key>
+          <Property Name="LeasingCompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyInfoID" Type="Int32" Nullable="false" />
+          <Property Name="VehicleNum" Type="Int32" />
+          <Property Name="AvableVehicleNum" Type="Int32" />
+          <Property Name="DriverNum" Type="Int32" />
+          <Property Name="AvableDriverNum" Type="Int32" />
+          <Property Name="GroupID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LeasingCompanyGroup">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoginRelationship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountLoginID" Type="Int32" />
+          <Property Name="RoleID" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LongRentDriverInfo">
+          <Key>
+            <PropertyRef Name="DriverID" />
+          </Key>
+          <Property Name="DriverID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LeasingCompanyID" Type="Int32" />
+          <Property Name="PLeasingCompanyID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="StartTime" Type="DateTime" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Precision="3" />
+          <Property Name="PEnterpriseID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DriverNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LongRentVehicleInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LeasingCompanyID" Type="Int32" />
+          <Property Name="PLeasingCompanyID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="StartTime" Type="DateTime" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Precision="3" />
+          <Property Name="PEnterpriseID" Type="Int32" />
+          <Property Name="LicenseNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleBelong" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LPRelationship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CooperateRegID" Type="Int32" />
+          <Property Name="LeasingCompanyID" Type="Int32" />
+          <Property Name="PartnerLeasingCompanyID" Type="Int32" />
+          <Property Name="ApplicationPartyLCID" Type="Int32" />
+          <Property Name="ConfigInfoID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="MenuList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="MenuItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ParentID" Type="Int32" Nullable="false" />
+          <Property Name="PageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sort" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="OfflineBillCharge">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PayPartyID" Type="Int32" Nullable="false" />
+          <Property Name="ChargePartyType" Type="Int32" Nullable="false" />
+          <Property Name="ChargePartyID" Type="Int32" />
+          <Property Name="BillType" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Currency" Type="Int32" Nullable="false" />
+          <Property Name="AmountDue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ActualCost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ActualDiscount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PayChargeTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InDBTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="OrderCheckRule">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EnterpriseID" Type="Int32" Nullable="false" />
+          <Property Name="CheckRule1" Type="Int32" />
+          <Property Name="CheckRule2" Type="Int32" />
+          <Property Name="CheckRule3" Type="Int32" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OrderImplementRule">
+          <Key>
+            <PropertyRef Name="RuleID" />
+          </Key>
+          <Property Name="RuleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RuleDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderInfo">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UseCarInfoID" Type="Int32" Nullable="false" />
+          <Property Name="Applicant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="StartTime" Type="DateTime" Precision="3" />
+          <Property Name="CustomCycleLength" Type="Int32" />
+          <Property Name="OccTime" Type="DateTime" Precision="3" />
+          <Property Name="IsValid" Type="Int32" />
+          <Property Name="VDRID" Type="Int32" />
+          <Property Name="OrderState" Type="Int32" />
+          <Property Name="OrderMode" Type="Int32" />
+          <Property Name="StateUpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="EContactStatue" Type="Int32" />
+          <Property Name="LContactStatue" Type="Int32" />
+          <Property Name="LVehicleOrigin" Type="Int32" />
+          <Property Name="EVehicleOrigin" Type="Int32" />
+          <Property Name="ActuallyVehicleID" Type="Int32" />
+          <Property Name="ActuallyDriverID" Type="Int32" />
+          <Property Name="OrderProperty" Type="Int32" />
+          <Property Name="ActualStartSite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ActualStartSitelongitude" Type="Decimal" Precision="18" Scale="6" />
+          <Property Name="ActualStartSitelatitude" Type="Decimal" Precision="18" Scale="6" />
+          <Property Name="ActualEndSite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ActualEndSitelongitude" Type="Decimal" Precision="18" Scale="6" />
+          <Property Name="ActualEndSitelatitude" Type="Decimal" Precision="18" Scale="6" />
+          <Property Name="StartKm" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="EndKm" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BillID" Type="Int32" />
+          <Property Name="CheckStatue" Type="Int32" Nullable="false" />
+          <Property Name="BillCheckStatue" Type="Int32" />
+          <Property Name="OrderCompanyID" Type="Int32" />
+          <Property Name="SupplierID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OrderLocation">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeBelongsID" Type="Int32" Nullable="false" />
+          <Property Name="Longitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LocPointName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RemainTime" Type="DateTime" Precision="3" />
+          <Property Name="OccTime" Type="DateTime" Precision="3" />
+          <Property Name="InitiativeReportOrNot" Type="Int32" Nullable="false" />
+          <Property Name="IsValid" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderLocationHistory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="TypeBelongsID" Type="Int32" Nullable="false" />
+          <Property Name="Longitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LocPointName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OccTime" Type="DateTime" Precision="3" />
+          <Property Name="InitiativeReportOrNot" Type="Int32" />
+          <Property Name="IsValid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OrderVehicleTravel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="OccTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TollCharge" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OilCharge" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ParkingCharge" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OtherCharge" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OtherChargeDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OilMass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Oil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ParkingCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TollCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WaitingTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TicketCount" Type="Int32" />
+          <Property Name="StoppingPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WayPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Overtime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PlatformLogin">
+          <Key>
+            <PropertyRef Name="PLoginID" />
+          </Key>
+          <Property Name="PLoginID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PLoginPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="RecentLoginTime" Type="DateTime" Precision="3" />
+          <Property Name="AccountTypeID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnitID" Type="Int32" Nullable="false" />
+          <Property Name="TypeBelongsID" Type="Int32" Nullable="false" />
+          <Property Name="PositionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="SettlementRule">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RuleDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomCycleLengthMax" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ShowPermission">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuListID" Type="Int32" />
+          <Property Name="AccountTypeID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="StaffWorkInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkAge" Type="Int32" />
+          <Property Name="DepartmentID" Type="Int32" />
+          <Property Name="PositionID" Type="Int32" />
+          <Property Name="UpLevelStaffID" Type="Int32" />
+          <Property Name="EntryTime" Type="DateTime" Precision="3" />
+          <Property Name="DepartureTime" Type="DateTime" Precision="3" />
+          <Property Name="InJobState" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Station" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TypeBelongs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UseCarInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UseVehicleMode" Type="Int32" />
+          <Property Name="Origin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OriginLongitude" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="OriginLatitude" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="Destination" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DestinationLongitude" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="DestinationLatitude" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="DepartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UseVehicleDate" Type="DateTime" Precision="3" />
+          <Property Name="UseVehicleType" Type="Int32" Nullable="false" />
+          <Property Name="UseVehicleLevel" Type="Int32" />
+          <Property Name="UseVehicleSeatingCapacity" Type="Int32" />
+          <Property Name="SettlementType" Type="Int32" />
+          <Property Name="PersonNum" Type="Int32" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Intend" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dartment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Passenger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Journey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CarUseCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PayModel" Type="Int32" />
+          <Property Name="TaskDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StrikePrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OrderOffer" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CollectFees" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PriceWay" Type="Int32" />
+          <Property Name="PreEndTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="UseCarInfo2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UseVehicleMode" Type="Int32" />
+          <Property Name="Origin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OriginLongitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OriginLatitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Destination" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DestinationLongitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DestinationLatitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DepartTime" Type="DateTime" Precision="3" />
+          <Property Name="UseVehicleDate" Type="DateTime" Precision="3" />
+          <Property Name="UseVehicleType" Type="Int32" />
+          <Property Name="UseVehicleLevel" Type="Int32" />
+          <Property Name="UseVehicleSeatingCapacity" Type="Int32" />
+          <Property Name="SettlementType" Type="Int32" />
+          <Property Name="CustomCycleLength" Type="Int32" />
+          <Property Name="PersonNum" Type="Int32" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Intend" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dartment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Passenger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Journey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CarUseCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PayModel" Type="Int32" />
+          <Property Name="VehicleOrigin" Type="Int32" />
+          <Property Name="TaskDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StrikePrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OrderOffer" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CollectFees" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PreEndTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserType" Type="Int32" />
+          <Property Name="UserBaseID" Type="Int32" />
+          <Property Name="EnterpriseID" Type="Int32" />
+          <Property Name="StaffWorkInfoID" Type="Int32" />
+          <Property Name="UserPhotoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserBase">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Heitht" Type="Double" />
+          <Property Name="Weitht" Type="Double" />
+          <Property Name="Identification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ValuationRulesInfo">
+          <Key>
+            <PropertyRef Name="ValuationRulesID" />
+          </Key>
+          <Property Name="ValuationRulesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BelongsLeaseID" Type="Int32" />
+          <Property Name="ValuationRulesName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ValuationObject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ValuationTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ServerDays" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ServerTime" Type="Int32" />
+          <Property Name="ServerMileage" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ExcessiveOvertimeUnitPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OverMileageCalculateWay" Type="Int32" />
+          <Property Name="SuperMileageUnitPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RoadTollCalculateWay" Type="Int32" />
+          <Property Name="CustomersUsers" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BaseRent" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ParkingFeeCalculateWay" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Name="VehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LicenseNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleType" Type="Int32" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleSource" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleBelong" Type="Int32" />
+          <Property Name="GovLeaseID" Type="Int32" />
+          <Property Name="VehicleDate" Type="DateTime" Precision="3" />
+          <Property Name="WPVehicleBelong" Type="Int32" />
+          <Property Name="WPGovLeaseID" Type="Int32" />
+          <Property Name="WPVehicleDate" Type="DateTime" Precision="3" />
+          <Property Name="SeatingCapacity" Type="Int32" />
+          <Property Name="FuelType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FuelCost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GasDisplacement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ServicedLife" Type="Int32" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="Level" Type="Int32" />
+          <Property Name="RemainValue" Type="Int32" />
+          <Property Name="VehiclePhotoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EnableBusinessClassList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleProperty" Type="Int32" />
+        </EntityType>
+        <EntityType Name="VehicleBrandValuation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleBelong" Type="Int32" />
+          <Property Name="GovLeaseID" Type="Int32" />
+          <Property Name="VehicleBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Valuation" Type="Double" />
+          <Property Name="ActivityFavorable" Type="Double" />
+        </EntityType>
+        <EntityType Name="VehicleDriverRelationship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="DriverID" Type="Int32" />
+          <Property Name="TypeBelongsID" Type="Int32" />
+          <Property Name="VehicleType" Type="Int32" />
+          <Property Name="DriverType" Type="Int32" />
+          <Property Name="BindingTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="VehicleDriverWorking">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnitID" Type="Int32" Nullable="false" />
+          <Property Name="VehicleDriverType" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="TypeBelongsID" Type="Int32" />
+          <Property Name="ServingTime" Type="Int32" Nullable="false" />
+          <Property Name="ServingDay" Type="Int32" />
+          <Property Name="WorkStatus" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VehicleFixedPay">
+          <Key>
+            <PropertyRef Name="VehicleID" />
+          </Key>
+          <Property Name="VehicleID" Type="Int32" Nullable="false" />
+          <Property Name="StaffID" Type="Int32" Nullable="false" />
+          <Property Name="PayCurrency" Type="Int32" />
+          <Property Name="InsurancePayInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TrafficForcePayInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleShipPayInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherPayInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OtherPayDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PayDate" Type="DateTime" Precision="3" />
+          <Property Name="PayCheckDate" Type="DateTime" Precision="3" />
+          <Property Name="NextPayDate" Type="DateTime" Precision="3" />
+          <Property Name="PayState" Type="Int32" Nullable="false" />
+          <Property Name="PayDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RemindOperateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="VehicleHandoverRecord">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="VehicleID" Type="Int32" Nullable="false" />
+          <Property Name="LastDriverID" Type="Int32" Nullable="false" />
+          <Property Name="NowDriverID" Type="Int32" Nullable="false" />
+          <Property Name="HandoverTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WorkTableDisplay">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoginID" Type="Int32" />
+          <Property Name="MenuListID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="成绩表">
+          <Key>
+            <PropertyRef Name="学号" />
+            <PropertyRef Name="教师编号" />
+            <PropertyRef Name="课程号" />
+          </Key>
+          <Property Name="学号" Type="Int32" Nullable="false" />
+          <Property Name="教师编号" Type="Int32" Nullable="false" />
+          <Property Name="课程号" Type="Byte" Nullable="false" />
+          <Property Name="分数" Type="Decimal" Precision="4" Scale="1" />
+        </EntityType>
+        <EntityType Name="教师表">
+          <Key>
+            <PropertyRef Name="教师编号" />
+          </Key>
+          <Property Name="教师编号" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="姓名" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="出生日期" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="性别" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="院系编号" Type="Byte" />
+          <Property Name="学历" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="备注" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="课程表">
+          <Key>
+            <PropertyRef Name="课程号" />
+          </Key>
+          <Property Name="课程号" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="课程名" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="学分" Type="Int32" />
+          <Property Name="备注" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="学生表">
+          <Key>
+            <PropertyRef Name="学号" />
+          </Key>
+          <Property Name="学号" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="姓名" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="性别" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="出生日期" Type="DateTime" Precision="0" />
+          <Property Name="院系编号" Type="Byte" Nullable="false" />
+          <Property Name="专业编号" Type="Byte" Nullable="false" />
+          <Property Name="出生地" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="政治面貌" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="备注" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="学生课程表">
+          <Key>
+            <PropertyRef Name="课程号" />
+          </Key>
+          <Property Name="课程号" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="课程名" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="学分" Type="Byte" />
+          <Property Name="备注" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="TestDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AccountLogin" EntityType="Self.AccountLogin" />
+          <EntitySet Name="AccountType" EntityType="Self.AccountType" />
+          <EntitySet Name="Bill" EntityType="Self.Bill" />
+          <EntitySet Name="BillCheckRule" EntityType="Self.BillCheckRule" />
+          <EntitySet Name="books" EntityType="Self.books" />
+          <EntitySet Name="BusinessClass" EntityType="Self.BusinessClass" />
+          <EntitySet Name="ClientSettlement" EntityType="Self.ClientSettlement" />
+          <EntitySet Name="CompanyInfo" EntityType="Self.CompanyInfo" />
+          <EntitySet Name="ConfigInfo" EntityType="Self.ConfigInfo" />
+          <EntitySet Name="CooperateRegistInfo" EntityType="Self.CooperateRegistInfo" />
+          <EntitySet Name="CooperateServiceInfo" EntityType="Self.CooperateServiceInfo" />
+          <EntitySet Name="CRUDModel" EntityType="Self.CRUDModel" />
+          <EntitySet Name="Department" EntityType="Self.Department" />
+          <EntitySet Name="Driver" EntityType="Self.Driver" />
+          <EntitySet Name="DrivingLicenseType" EntityType="Self.DrivingLicenseType" />
+          <EntitySet Name="ELRelationship" EntityType="Self.ELRelationship" />
+          <EntitySet Name="Enterprise" EntityType="Self.Enterprise" />
+          <EntitySet Name="EnterpriseBillCheck" EntityType="Self.EnterpriseBillCheck" />
+          <EntitySet Name="EnterpriseOrderCheck" EntityType="Self.EnterpriseOrderCheck" />
+          <EntitySet Name="EStaffOrderApproval" EntityType="Self.EStaffOrderApproval" />
+          <EntitySet Name="EStaffOrderPermission" EntityType="Self.EStaffOrderPermission" />
+          <EntitySet Name="EStaffOrderRule" EntityType="Self.EStaffOrderRule" />
+          <EntitySet Name="EStaffUseInfo" EntityType="Self.EStaffUseInfo" />
+          <EntitySet Name="EStaffUseVehicle" EntityType="Self.EStaffUseVehicle" />
+          <EntitySet Name="Information" EntityType="Self.Information" />
+          <EntitySet Name="LCBillAutoConfirm" EntityType="Self.LCBillAutoConfirm" />
+          <EntitySet Name="LCSettlementRule" EntityType="Self.LCSettlementRule" />
+          <EntitySet Name="LCStaff" EntityType="Self.LCStaff" />
+          <EntitySet Name="LCValuation" EntityType="Self.LCValuation" />
+          <EntitySet Name="LeasingCompany" EntityType="Self.LeasingCompany" />
+          <EntitySet Name="LeasingCompanyGroup" EntityType="Self.LeasingCompanyGroup" />
+          <EntitySet Name="LoginRelationship" EntityType="Self.LoginRelationship" />
+          <EntitySet Name="LongRentDriverInfo" EntityType="Self.LongRentDriverInfo" />
+          <EntitySet Name="LongRentVehicleInfo" EntityType="Self.LongRentVehicleInfo" />
+          <EntitySet Name="LPRelationship" EntityType="Self.LPRelationship" />
+          <EntitySet Name="MenuList" EntityType="Self.MenuList" />
+          <EntitySet Name="OfflineBillCharge" EntityType="Self.OfflineBillCharge" />
+          <EntitySet Name="OrderCheckRule" EntityType="Self.OrderCheckRule" />
+          <EntitySet Name="OrderImplementRule" EntityType="Self.OrderImplementRule" />
+          <EntitySet Name="OrderInfo" EntityType="Self.OrderInfo" />
+          <EntitySet Name="OrderLocation" EntityType="Self.OrderLocation" />
+          <EntitySet Name="OrderLocationHistory" EntityType="Self.OrderLocationHistory" />
+          <EntitySet Name="OrderVehicleTravel" EntityType="Self.OrderVehicleTravel" />
+          <EntitySet Name="PlatformLogin" EntityType="Self.PlatformLogin" />
+          <EntitySet Name="Position" EntityType="Self.Position" />
+          <EntitySet Name="SettlementRule" EntityType="Self.SettlementRule" />
+          <EntitySet Name="ShowPermission" EntityType="Self.ShowPermission" />
+          <EntitySet Name="StaffWorkInfo" EntityType="Self.StaffWorkInfo" />
+          <EntitySet Name="TypeBelongs" EntityType="Self.TypeBelongs" />
+          <EntitySet Name="UseCarInfo" EntityType="Self.UseCarInfo" />
+          <EntitySet Name="UseCarInfo2" EntityType="Self.UseCarInfo2" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="UserBase" EntityType="Self.UserBase" />
+          <EntitySet Name="ValuationRulesInfo" EntityType="Self.ValuationRulesInfo" />
+          <EntitySet Name="Vehicle" EntityType="Self.Vehicle" />
+          <EntitySet Name="VehicleBrandValuation" EntityType="Self.VehicleBrandValuation" />
+          <EntitySet Name="VehicleDriverRelationship" EntityType="Self.VehicleDriverRelationship" />
+          <EntitySet Name="VehicleDriverWorking" EntityType="Self.VehicleDriverWorking" />
+          <EntitySet Name="VehicleFixedPay" EntityType="Self.VehicleFixedPay" />
+          <EntitySet Name="VehicleHandoverRecord" EntityType="Self.VehicleHandoverRecord" />
+          <EntitySet Name="WorkTableDisplay" EntityType="Self.WorkTableDisplay" />
+          <EntitySet Name="成绩表" EntityType="Self.成绩表" />
+          <EntitySet Name="教师表" EntityType="Self.教师表" />
+          <EntitySet Name="课程表" EntityType="Self.课程表" />
+          <EntitySet Name="学生表" EntityType="Self.学生表" />
+          <EntitySet Name="学生课程表" EntityType="Self.学生课程表" />
+          <FunctionImport Name="SPLIT" IsComposable="true" ReturnType="Collection(TestDBModel.SPLIT_Result)">
+            <Parameter Name="inputStr" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="book_page">
+            <Parameter Name="TableName" Mode="In" Type="String" />
+            <Parameter Name="ReFieldsStr" Mode="In" Type="String" />
+            <Parameter Name="OrderString" Mode="In" Type="String" />
+            <Parameter Name="WhereString" Mode="In" Type="String" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+            <Parameter Name="TotalRecord" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="book_temp" ReturnType="Collection(TestDBModel.book_temp_Result)" />
+          <FunctionImport Name="charBooks" ReturnType="Collection(TestDBModel.charBooks_Result)">
+            <Parameter Name="bookAuth" Mode="In" Type="String" />
+            <Parameter Name="bookName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="charBooks1">
+            <Parameter Name="bookAuth" Mode="In" Type="String" />
+            <Parameter Name="bookName" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getBookId">
+            <Parameter Name="bookAuth" Mode="In" Type="String" />
+            <Parameter Name="bookId" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="proc_get_allBooks" ReturnType="Collection(String)" />
+          <FunctionImport Name="searchBooks" ReturnType="Collection(TestDBModel.searchBooks_Result)">
+            <Parameter Name="bookID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="searchBooks1" ReturnType="Collection(TestDBModel.searchBooks1_Result)">
+            <Parameter Name="bookID" Mode="In" Type="Int32" />
+            <Parameter Name="bookAuth" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="book_temp_Result">
+          <Property Type="Int32" Name="book_id" Nullable="false" />
+          <Property Type="String" Name="book_name" Nullable="true" MaxLength="20" />
+          <Property Type="Double" Name="book_price" Nullable="true" />
+          <Property Type="String" Name="book_auth" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="charBooks_Result">
+          <Property Type="Int32" Name="book_id" Nullable="false" />
+          <Property Type="String" Name="book_name" Nullable="true" MaxLength="20" />
+          <Property Type="Double" Name="book_price" Nullable="true" />
+          <Property Type="String" Name="book_auth" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="searchBooks_Result">
+          <Property Type="Int32" Name="book_id" Nullable="false" />
+          <Property Type="String" Name="book_name" Nullable="true" MaxLength="20" />
+          <Property Type="Double" Name="book_price" Nullable="true" />
+          <Property Type="String" Name="book_auth" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="searchBooks1_Result">
+          <Property Type="Int32" Name="book_id" Nullable="false" />
+          <Property Type="String" Name="book_name" Nullable="true" MaxLength="20" />
+          <Property Type="Double" Name="book_price" Nullable="true" />
+          <Property Type="String" Name="book_auth" Nullable="true" MaxLength="10" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TestDBModelStoreContainer" CdmEntityContainer="TestDBEntities">
+          <EntitySetMapping Name="AccountLogin">
+            <EntityTypeMapping TypeName="TestDBModel.AccountLogin">
+              <MappingFragment StoreEntitySet="AccountLogin">
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+                <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+                <ScalarProperty Name="LoginPwd" ColumnName="LoginPwd" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="RecentLoginTime" ColumnName="RecentLoginTime" />
+                <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+                <ScalarProperty Name="RandomCode" ColumnName="RandomCode" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CreateWay" ColumnName="CreateWay" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="MobilePlatform" ColumnName="MobilePlatform" />
+                <ScalarProperty Name="LoginState" ColumnName="LoginState" />
+                <ScalarProperty Name="Gmd" ColumnName="Gmd" />
+                <ScalarProperty Name="OverdueTime" ColumnName="OverdueTime" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountType">
+            <EntityTypeMapping TypeName="TestDBModel.AccountType">
+              <MappingFragment StoreEntitySet="AccountType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="TypeDescription" ColumnName="TypeDescription" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bill">
+            <EntityTypeMapping TypeName="TestDBModel.Bill">
+              <MappingFragment StoreEntitySet="Bill">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BillType" ColumnName="BillType" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="SettlementType" ColumnName="SettlementType" />
+                <ScalarProperty Name="SettlementTime" ColumnName="SettlementTime" />
+                <ScalarProperty Name="ChargeCurrency" ColumnName="ChargeCurrency" />
+                <ScalarProperty Name="ActualCost" ColumnName="ActualCost" />
+                <ScalarProperty Name="ActualDiscount" ColumnName="ActualDiscount" />
+                <ScalarProperty Name="SettlementProperty" ColumnName="SettlementProperty" />
+                <ScalarProperty Name="OccTime" ColumnName="OccTime" />
+                <ScalarProperty Name="SettlementState" ColumnName="SettlementState" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BillCheckRule">
+            <EntityTypeMapping TypeName="TestDBModel.BillCheckRule">
+              <MappingFragment StoreEntitySet="BillCheckRule">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+                <ScalarProperty Name="CheckRule1" ColumnName="CheckRule1" />
+                <ScalarProperty Name="CheckRule2" ColumnName="CheckRule2" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="books">
+            <EntityTypeMapping TypeName="TestDBModel.books">
+              <MappingFragment StoreEntitySet="books">
+                <ScalarProperty Name="book_id" ColumnName="book_id" />
+                <ScalarProperty Name="book_name" ColumnName="book_name" />
+                <ScalarProperty Name="book_price" ColumnName="book_price" />
+                <ScalarProperty Name="book_auth" ColumnName="book_auth" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusinessClass">
+            <EntityTypeMapping TypeName="TestDBModel.BusinessClass">
+              <MappingFragment StoreEntitySet="BusinessClass">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientSettlement">
+            <EntityTypeMapping TypeName="TestDBModel.ClientSettlement">
+              <MappingFragment StoreEntitySet="ClientSettlement">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="RuleList" ColumnName="RuleList" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyInfo">
+            <EntityTypeMapping TypeName="TestDBModel.CompanyInfo">
+              <MappingFragment StoreEntitySet="CompanyInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Scale" ColumnName="Scale" />
+                <ScalarProperty Name="Nature" ColumnName="Nature" />
+                <ScalarProperty Name="FoundingTime" ColumnName="FoundingTime" />
+                <ScalarProperty Name="Industry" ColumnName="Industry" />
+                <ScalarProperty Name="ChildIndustry" ColumnName="ChildIndustry" />
+                <ScalarProperty Name="RegisteredCapital" ColumnName="RegisteredCapital" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="JoinTime" ColumnName="JoinTime" />
+                <ScalarProperty Name="ContactNum" ColumnName="ContactNum" />
+                <ScalarProperty Name="ExtendInfoPath" ColumnName="ExtendInfoPath" />
+                <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConfigInfo">
+            <EntityTypeMapping TypeName="TestDBModel.ConfigInfo">
+              <MappingFragment StoreEntitySet="ConfigInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ApplicationTime" ColumnName="ApplicationTime" />
+                <ScalarProperty Name="StateUpdateTime" ColumnName="StateUpdateTime" />
+                <ScalarProperty Name="ConfigState" ColumnName="ConfigState" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CooperateRegistInfo">
+            <EntityTypeMapping TypeName="TestDBModel.CooperateRegistInfo">
+              <MappingFragment StoreEntitySet="CooperateRegistInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CooperateServiceInfo">
+            <EntityTypeMapping TypeName="TestDBModel.CooperateServiceInfo">
+              <MappingFragment StoreEntitySet="CooperateServiceInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+                <ScalarProperty Name="RelationshipType" ColumnName="RelationshipType" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRUDModel">
+            <EntityTypeMapping TypeName="TestDBModel.CRUDModel">
+              <MappingFragment StoreEntitySet="CRUDModel">
+                <ScalarProperty Name="课程号" ColumnName="课程号" />
+                <ScalarProperty Name="课程名" ColumnName="课程名" />
+                <ScalarProperty Name="学分" ColumnName="学分" />
+                <ScalarProperty Name="备注" ColumnName="备注" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Department">
+            <EntityTypeMapping TypeName="TestDBModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="UpLevelDepartmentID" ColumnName="UpLevelDepartmentID" />
+                <ScalarProperty Name="FoundingTime" ColumnName="FoundingTime" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Driver">
+            <EntityTypeMapping TypeName="TestDBModel.Driver">
+              <MappingFragment StoreEntitySet="Driver">
+                <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="DrivingAge" ColumnName="DrivingAge" />
+                <ScalarProperty Name="DrivingLicenseTypeID" ColumnName="DrivingLicenseTypeID" />
+                <ScalarProperty Name="DriverPhotoPath" ColumnName="DriverPhotoPath" />
+                <ScalarProperty Name="EnableBusinessClass" ColumnName="EnableBusinessClass" />
+                <ScalarProperty Name="IsExistDrunkDrivingRecord" ColumnName="IsExistDrunkDrivingRecord" />
+                <ScalarProperty Name="WPDriverBelong" ColumnName="WPDriverBelong" />
+                <ScalarProperty Name="WPGovLeaseID" ColumnName="WPGovLeaseID" />
+                <ScalarProperty Name="WPDriverDate" ColumnName="WPDriverDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DrivingLicenseType">
+            <EntityTypeMapping TypeName="TestDBModel.DrivingLicenseType">
+              <MappingFragment StoreEntitySet="DrivingLicenseType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DriverLevel" ColumnName="DriverLevel" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ELRelationship">
+            <EntityTypeMapping TypeName="TestDBModel.ELRelationship">
+              <MappingFragment StoreEntitySet="ELRelationship">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CooperateRegID" ColumnName="CooperateRegID" />
+                <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+                <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+                <ScalarProperty Name="ApplicationPartyTBID" ColumnName="ApplicationPartyTBID" />
+                <ScalarProperty Name="ConfigInfoID" ColumnName="ConfigInfoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enterprise">
+            <EntityTypeMapping TypeName="TestDBModel.Enterprise">
+              <MappingFragment StoreEntitySet="Enterprise">
+                <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+                <ScalarProperty Name="CompanyInfoID" ColumnName="CompanyInfoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnterpriseBillCheck">
+            <EntityTypeMapping TypeName="TestDBModel.EnterpriseBillCheck">
+              <MappingFragment StoreEntitySet="EnterpriseBillCheck">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BillID" ColumnName="BillID" />
+                <ScalarProperty Name="ApprovalState" ColumnName="ApprovalState" />
+                <ScalarProperty Name="IsConfirmCharge" ColumnName="IsConfirmCharge" />
+                <ScalarProperty Name="LastApprovalConfirmTime" ColumnName="LastApprovalConfirmTime" />
+                <ScalarProperty Name="LastApprovalPersonID" ColumnName="LastApprovalPersonID" />
+                <ScalarProperty Name="ApprovalPersonList" ColumnName="ApprovalPersonList" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnterpriseOrderCheck">
+            <EntityTypeMapping TypeName="TestDBModel.EnterpriseOrderCheck">
+              <MappingFragment StoreEntitySet="EnterpriseOrderCheck">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ApprovalState" ColumnName="ApprovalState" />
+                <ScalarProperty Name="IsPass" ColumnName="IsPass" />
+                <ScalarProperty Name="LastApprovalTime" ColumnName="LastApprovalTime" />
+                <ScalarProperty Name="LastApprovalPersonID" ColumnName="LastApprovalPersonID" />
+                <ScalarProperty Name="ApprovalPersonList" ColumnName="ApprovalPersonList" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EStaffOrderApproval">
+            <EntityTypeMapping TypeName="TestDBModel.EStaffOrderApproval">
+              <MappingFragment StoreEntitySet="EStaffOrderApproval">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ApprovalPermit" ColumnName="ApprovalPermit" />
+                <ScalarProperty Name="PermissionEndTime" ColumnName="PermissionEndTime" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EStaffOrderPermission">
+            <EntityTypeMapping TypeName="TestDBModel.EStaffOrderPermission">
+              <MappingFragment StoreEntitySet="EStaffOrderPermission">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="OrderPermit" ColumnName="OrderPermit" />
+                <ScalarProperty Name="BanTime" ColumnName="BanTime" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EStaffOrderRule">
+            <EntityTypeMapping TypeName="TestDBModel.EStaffOrderRule">
+              <MappingFragment StoreEntitySet="EStaffOrderRule">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="OrderBusinessClassList" ColumnName="OrderBusinessClassList" />
+                <ScalarProperty Name="OrderVehicleLevelList" ColumnName="OrderVehicleLevelList" />
+                <ScalarProperty Name="IsDirToLeasingCompany" ColumnName="IsDirToLeasingCompany" />
+                <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+                <ScalarProperty Name="SettlementTypeList" ColumnName="SettlementTypeList" />
+                <ScalarProperty Name="CustomCycleLengthMax" ColumnName="CustomCycleLengthMax" />
+                <ScalarProperty Name="IsNeedApproval" ColumnName="IsNeedApproval" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EStaffUseInfo">
+            <EntityTypeMapping TypeName="TestDBModel.EStaffUseInfo">
+              <MappingFragment StoreEntitySet="EStaffUseInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+                <ScalarProperty Name="ActualEndSite" ColumnName="ActualEndSite" />
+                <ScalarProperty Name="IsConfirmTravel" ColumnName="IsConfirmTravel" />
+                <ScalarProperty Name="OccTime" ColumnName="OccTime" />
+                <ScalarProperty Name="SupplementInfoDesc" ColumnName="SupplementInfoDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EStaffUseVehicle">
+            <EntityTypeMapping TypeName="TestDBModel.EStaffUseVehicle">
+              <MappingFragment StoreEntitySet="EStaffUseVehicle">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="IsPermitUse" ColumnName="IsPermitUse" />
+                <ScalarProperty Name="IsUsing" ColumnName="IsUsing" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="LastUseTime" ColumnName="LastUseTime" />
+                <ScalarProperty Name="NextUseTime" ColumnName="NextUseTime" />
+                <ScalarProperty Name="CurMonthTimes" ColumnName="CurMonthTimes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Information">
+            <EntityTypeMapping TypeName="TestDBModel.Information">
+              <MappingFragment StoreEntitySet="Information">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="InfoType" ColumnName="InfoType" />
+                <ScalarProperty Name="InfoSenderID" ColumnName="InfoSenderID" />
+                <ScalarProperty Name="SenderType" ColumnName="SenderType" />
+                <ScalarProperty Name="InfoRecverID" ColumnName="InfoRecverID" />
+                <ScalarProperty Name="RecverType" ColumnName="RecverType" />
+                <ScalarProperty Name="InfoOperation" ColumnName="InfoOperation" />
+                <ScalarProperty Name="InfoDesc" ColumnName="InfoDesc" />
+                <ScalarProperty Name="OccTime" ColumnName="OccTime" />
+                <ScalarProperty Name="SenderDelFlag" ColumnName="SenderDelFlag" />
+                <ScalarProperty Name="RecverDelFlag" ColumnName="RecverDelFlag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LCBillAutoConfirm">
+            <EntityTypeMapping TypeName="TestDBModel.LCBillAutoConfirm">
+              <MappingFragment StoreEntitySet="LCBillAutoConfirm">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ELRelationshipID" ColumnName="ELRelationshipID" />
+                <ScalarProperty Name="IsAutoConfirm" ColumnName="IsAutoConfirm" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LCSettlementRule">
+            <EntityTypeMapping TypeName="TestDBModel.LCSettlementRule">
+              <MappingFragment StoreEntitySet="LCSettlementRule">
+                <ScalarProperty Name="IDme" ColumnName="IDme" />
+                <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+                <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+                <ScalarProperty Name="CustomCycleLengthMax" ColumnName="CustomCycleLengthMax" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LCStaff">
+            <EntityTypeMapping TypeName="TestDBModel.LCStaff">
+              <MappingFragment StoreEntitySet="LCStaff">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserBaseID" ColumnName="UserBaseID" />
+                <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+                <ScalarProperty Name="StaffWorkInfoID" ColumnName="StaffWorkInfoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LCValuation">
+            <EntityTypeMapping TypeName="TestDBModel.LCValuation">
+              <MappingFragment StoreEntitySet="LCValuation">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+                <ScalarProperty Name="ValuationCurrency" ColumnName="ValuationCurrency" />
+                <ScalarProperty Name="FavorableCurrency" ColumnName="FavorableCurrency" />
+                <ScalarProperty Name="ValuationFormula" ColumnName="ValuationFormula" />
+                <ScalarProperty Name="BaseValuation" ColumnName="BaseValuation" />
+                <ScalarProperty Name="VehicleLevelValuation" ColumnName="VehicleLevelValuation" />
+                <ScalarProperty Name="VehicleTypeValuation" ColumnName="VehicleTypeValuation" />
+                <ScalarProperty Name="VehicleSLifeValuation" ColumnName="VehicleSLifeValuation" />
+                <ScalarProperty Name="UVTimeValuation" ColumnName="UVTimeValuation" />
+                <ScalarProperty Name="UVDayValuation" ColumnName="UVDayValuation" />
+                <ScalarProperty Name="UVBCValuation" ColumnName="UVBCValuation" />
+                <ScalarProperty Name="ActivityStartTime" ColumnName="ActivityStartTime" />
+                <ScalarProperty Name="ActivityEndTime" ColumnName="ActivityEndTime" />
+                <ScalarProperty Name="ConsumeReductionRule" ColumnName="ConsumeReductionRule" />
+                <ScalarProperty Name="ActivityUVLevelFavorable" ColumnName="ActivityUVLevelFavorable" />
+                <ScalarProperty Name="ActivityUVTypeFavorable" ColumnName="ActivityUVTypeFavorable" />
+                <ScalarProperty Name="ActivityUVTimeFavorable" ColumnName="ActivityUVTimeFavorable" />
+                <ScalarProperty Name="ActivityUVDayFavorable" ColumnName="ActivityUVDayFavorable" />
+                <ScalarProperty Name="UVBCFavorable" ColumnName="UVBCFavorable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeasingCompany">
+            <EntityTypeMapping TypeName="TestDBModel.LeasingCompany">
+              <MappingFragment StoreEntitySet="LeasingCompany">
+                <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+                <ScalarProperty Name="CompanyInfoID" ColumnName="CompanyInfoID" />
+                <ScalarProperty Name="VehicleNum" ColumnName="VehicleNum" />
+                <ScalarProperty Name="AvableVehicleNum" ColumnName="AvableVehicleNum" />
+                <ScalarProperty Name="DriverNum" ColumnName="DriverNum" />
+                <ScalarProperty Name="AvableDriverNum" ColumnName="AvableDriverNum" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeasingCompanyGroup">
+            <EntityTypeMapping TypeName="TestDBModel.LeasingCompanyGroup">
+              <MappingFragment StoreEntitySet="LeasingCompanyGroup">
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginRelationship">
+            <EntityTypeMapping TypeName="TestDBModel.LoginRelationship">
+              <MappingFragment StoreEntitySet="LoginRelationship">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AccountLoginID" ColumnName="AccountLoginID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LongRentDriverInfo">
+            <EntityTypeMapping TypeName="TestDBModel.LongRentDriverInfo">
+              <MappingFragment StoreEntitySet="LongRentDriverInfo">
+                <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+                <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+                <ScalarProperty Name="PLeasingCompanyID" ColumnName="PLeasingCompanyID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="PEnterpriseID" ColumnName="PEnterpriseID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DriverNum" ColumnName="DriverNum" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LongRentVehicleInfo">
+            <EntityTypeMapping TypeName="TestDBModel.LongRentVehicleInfo">
+              <MappingFragment StoreEntitySet="LongRentVehicleInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+                <ScalarProperty Name="PLeasingCompanyID" ColumnName="PLeasingCompanyID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="PEnterpriseID" ColumnName="PEnterpriseID" />
+                <ScalarProperty Name="LicenseNum" ColumnName="LicenseNum" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="VehicleBelong" ColumnName="VehicleBelong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LPRelationship">
+            <EntityTypeMapping TypeName="TestDBModel.LPRelationship">
+              <MappingFragment StoreEntitySet="LPRelationship">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CooperateRegID" ColumnName="CooperateRegID" />
+                <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+                <ScalarProperty Name="PartnerLeasingCompanyID" ColumnName="PartnerLeasingCompanyID" />
+                <ScalarProperty Name="ApplicationPartyLCID" ColumnName="ApplicationPartyLCID" />
+                <ScalarProperty Name="ConfigInfoID" ColumnName="ConfigInfoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuList">
+            <EntityTypeMapping TypeName="TestDBModel.MenuList">
+              <MappingFragment StoreEntitySet="MenuList">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MenuItemName" ColumnName="MenuItemName" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OfflineBillCharge">
+            <EntityTypeMapping TypeName="TestDBModel.OfflineBillCharge">
+              <MappingFragment StoreEntitySet="OfflineBillCharge">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PayPartyID" ColumnName="PayPartyID" />
+                <ScalarProperty Name="ChargePartyType" ColumnName="ChargePartyType" />
+                <ScalarProperty Name="ChargePartyID" ColumnName="ChargePartyID" />
+                <ScalarProperty Name="BillType" ColumnName="BillType" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="AmountDue" ColumnName="AmountDue" />
+                <ScalarProperty Name="ActualCost" ColumnName="ActualCost" />
+                <ScalarProperty Name="ActualDiscount" ColumnName="ActualDiscount" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PayChargeTime" ColumnName="PayChargeTime" />
+                <ScalarProperty Name="InDBTime" ColumnName="InDBTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderCheckRule">
+            <EntityTypeMapping TypeName="TestDBModel.OrderCheckRule">
+              <MappingFragment StoreEntitySet="OrderCheckRule">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+                <ScalarProperty Name="CheckRule1" ColumnName="CheckRule1" />
+                <ScalarProperty Name="CheckRule2" ColumnName="CheckRule2" />
+                <ScalarProperty Name="CheckRule3" ColumnName="CheckRule3" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderImplementRule">
+            <EntityTypeMapping TypeName="TestDBModel.OrderImplementRule">
+              <MappingFragment StoreEntitySet="OrderImplementRule">
+                <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+                <ScalarProperty Name="RuleDescription" ColumnName="RuleDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderInfo">
+            <EntityTypeMapping TypeName="TestDBModel.OrderInfo">
+              <MappingFragment StoreEntitySet="OrderInfo">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="UseCarInfoID" ColumnName="UseCarInfoID" />
+                <ScalarProperty Name="Applicant" ColumnName="Applicant" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="CustomCycleLength" ColumnName="CustomCycleLength" />
+                <ScalarProperty Name="OccTime" ColumnName="OccTime" />
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+                <ScalarProperty Name="VDRID" ColumnName="VDRID" />
+                <ScalarProperty Name="OrderState" ColumnName="OrderState" />
+                <ScalarProperty Name="OrderMode" ColumnName="OrderMode" />
+                <ScalarProperty Name="StateUpdateTime" ColumnName="StateUpdateTime" />
+                <ScalarProperty Name="EContactStatue" ColumnName="EContactStatue" />
+                <ScalarProperty Name="LContactStatue" ColumnName="LContactStatue" />
+                <ScalarProperty Name="LVehicleOrigin" ColumnName="LVehicleOrigin" />
+                <ScalarProperty Name="EVehicleOrigin" ColumnName="EVehicleOrigin" />
+                <ScalarProperty Name="ActuallyVehicleID" ColumnName="ActuallyVehicleID" />
+                <ScalarProperty Name="ActuallyDriverID" ColumnName="ActuallyDriverID" />
+                <ScalarProperty Name="OrderProperty" ColumnName="OrderProperty" />
+                <ScalarProperty Name="ActualStartSite" ColumnName="ActualStartSite" />
+                <ScalarProperty Name="ActualStartSitelongitude" ColumnName="ActualStartSitelongitude" />
+                <ScalarProperty Name="ActualStartSitelatitude" ColumnName="ActualStartSitelatitude" />
+                <ScalarProperty Name="ActualEndSite" ColumnName="ActualEndSite" />
+                <ScalarProperty Name="ActualEndSitelongitude" ColumnName="ActualEndSitelongitude" />
+                <ScalarProperty Name="ActualEndSitelatitude" ColumnName="ActualEndSitelatitude" />
+                <ScalarProperty Name="StartKm" ColumnName="StartKm" />
+                <ScalarProperty Name="EndKm" ColumnName="EndKm" />
+                <ScalarProperty Name="TotalMoney" ColumnName="TotalMoney" />
+                <ScalarProperty Name="BillID" ColumnName="BillID" />
+                <ScalarProperty Name="CheckStatue" ColumnName="CheckStatue" />
+                <ScalarProperty Name="BillCheckStatue" ColumnName="BillCheckStatue" />
+                <ScalarProperty Name="OrderCompanyID" ColumnName="OrderCompanyID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderLocation">
+            <EntityTypeMapping TypeName="TestDBModel.OrderLocation">
+              <MappingFragment StoreEntitySet="OrderLocation">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="LocPointName" ColumnName="LocPointName" />
+                <ScalarProperty Name="RemainTime" ColumnName="RemainTime" />
+                <ScalarProperty Name="OccTime" ColumnName="OccTime" />
+                <ScalarProperty Name="InitiativeReportOrNot" ColumnName="InitiativeReportOrNot" />
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderLocationHistory">
+            <EntityTypeMapping TypeName="TestDBModel.OrderLocationHistory">
+              <MappingFragment StoreEntitySet="OrderLocationHistory">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="LocPointName" ColumnName="LocPointName" />
+                <ScalarProperty Name="OccTime" ColumnName="OccTime" />
+                <ScalarProperty Name="InitiativeReportOrNot" ColumnName="InitiativeReportOrNot" />
+                <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderVehicleTravel">
+            <EntityTypeMapping TypeName="TestDBModel.OrderVehicleTravel">
+              <MappingFragment StoreEntitySet="OrderVehicleTravel">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="OccTime" ColumnName="OccTime" />
+                <ScalarProperty Name="TollCharge" ColumnName="TollCharge" />
+                <ScalarProperty Name="OilCharge" ColumnName="OilCharge" />
+                <ScalarProperty Name="ParkingCharge" ColumnName="ParkingCharge" />
+                <ScalarProperty Name="OtherCharge" ColumnName="OtherCharge" />
+                <ScalarProperty Name="OtherChargeDescription" ColumnName="OtherChargeDescription" />
+                <ScalarProperty Name="OilMass" ColumnName="OilMass" />
+                <ScalarProperty Name="Oil" ColumnName="Oil" />
+                <ScalarProperty Name="ParkingCategory" ColumnName="ParkingCategory" />
+                <ScalarProperty Name="TollCategory" ColumnName="TollCategory" />
+                <ScalarProperty Name="WaitingTime" ColumnName="WaitingTime" />
+                <ScalarProperty Name="TicketCount" ColumnName="TicketCount" />
+                <ScalarProperty Name="StoppingPlace" ColumnName="StoppingPlace" />
+                <ScalarProperty Name="WayPlace" ColumnName="WayPlace" />
+                <ScalarProperty Name="Overtime" ColumnName="Overtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlatformLogin">
+            <EntityTypeMapping TypeName="TestDBModel.PlatformLogin">
+              <MappingFragment StoreEntitySet="PlatformLogin">
+                <ScalarProperty Name="PLoginID" ColumnName="PLoginID" />
+                <ScalarProperty Name="PLoginPwd" ColumnName="PLoginPwd" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="RecentLoginTime" ColumnName="RecentLoginTime" />
+                <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Position">
+            <EntityTypeMapping TypeName="TestDBModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+                <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SettlementRule">
+            <EntityTypeMapping TypeName="TestDBModel.SettlementRule">
+              <MappingFragment StoreEntitySet="SettlementRule">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RuleDescription" ColumnName="RuleDescription" />
+                <ScalarProperty Name="CustomCycleLengthMax" ColumnName="CustomCycleLengthMax" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShowPermission">
+            <EntityTypeMapping TypeName="TestDBModel.ShowPermission">
+              <MappingFragment StoreEntitySet="ShowPermission">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MenuListID" ColumnName="MenuListID" />
+                <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StaffWorkInfo">
+            <EntityTypeMapping TypeName="TestDBModel.StaffWorkInfo">
+              <MappingFragment StoreEntitySet="StaffWorkInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="WorkAge" ColumnName="WorkAge" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+                <ScalarProperty Name="UpLevelStaffID" ColumnName="UpLevelStaffID" />
+                <ScalarProperty Name="EntryTime" ColumnName="EntryTime" />
+                <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+                <ScalarProperty Name="InJobState" ColumnName="InJobState" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Station" ColumnName="Station" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeBelongs">
+            <EntityTypeMapping TypeName="TestDBModel.TypeBelongs">
+              <MappingFragment StoreEntitySet="TypeBelongs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UseCarInfo">
+            <EntityTypeMapping TypeName="TestDBModel.UseCarInfo">
+              <MappingFragment StoreEntitySet="UseCarInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UseVehicleMode" ColumnName="UseVehicleMode" />
+                <ScalarProperty Name="Origin" ColumnName="Origin" />
+                <ScalarProperty Name="OriginLongitude" ColumnName="OriginLongitude" />
+                <ScalarProperty Name="OriginLatitude" ColumnName="OriginLatitude" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="DestinationLongitude" ColumnName="DestinationLongitude" />
+                <ScalarProperty Name="DestinationLatitude" ColumnName="DestinationLatitude" />
+                <ScalarProperty Name="DepartTime" ColumnName="DepartTime" />
+                <ScalarProperty Name="UseVehicleDate" ColumnName="UseVehicleDate" />
+                <ScalarProperty Name="UseVehicleType" ColumnName="UseVehicleType" />
+                <ScalarProperty Name="UseVehicleLevel" ColumnName="UseVehicleLevel" />
+                <ScalarProperty Name="UseVehicleSeatingCapacity" ColumnName="UseVehicleSeatingCapacity" />
+                <ScalarProperty Name="SettlementType" ColumnName="SettlementType" />
+                <ScalarProperty Name="PersonNum" ColumnName="PersonNum" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Intend" ColumnName="Intend" />
+                <ScalarProperty Name="Dartment" ColumnName="Dartment" />
+                <ScalarProperty Name="Passenger" ColumnName="Passenger" />
+                <ScalarProperty Name="Journey" ColumnName="Journey" />
+                <ScalarProperty Name="CarUseCompany" ColumnName="CarUseCompany" />
+                <ScalarProperty Name="PayModel" ColumnName="PayModel" />
+                <ScalarProperty Name="TaskDesc" ColumnName="TaskDesc" />
+                <ScalarProperty Name="StrikePrice" ColumnName="StrikePrice" />
+                <ScalarProperty Name="OrderOffer" ColumnName="OrderOffer" />
+                <ScalarProperty Name="CollectFees" ColumnName="CollectFees" />
+                <ScalarProperty Name="PriceWay" ColumnName="PriceWay" />
+                <ScalarProperty Name="PreEndTime" ColumnName="PreEndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UseCarInfo2">
+            <EntityTypeMapping TypeName="TestDBModel.UseCarInfo2">
+              <MappingFragment StoreEntitySet="UseCarInfo2">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UseVehicleMode" ColumnName="UseVehicleMode" />
+                <ScalarProperty Name="Origin" ColumnName="Origin" />
+                <ScalarProperty Name="OriginLongitude" ColumnName="OriginLongitude" />
+                <ScalarProperty Name="OriginLatitude" ColumnName="OriginLatitude" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="DestinationLongitude" ColumnName="DestinationLongitude" />
+                <ScalarProperty Name="DestinationLatitude" ColumnName="DestinationLatitude" />
+                <ScalarProperty Name="DepartTime" ColumnName="DepartTime" />
+                <ScalarProperty Name="UseVehicleDate" ColumnName="UseVehicleDate" />
+                <ScalarProperty Name="UseVehicleType" ColumnName="UseVehicleType" />
+                <ScalarProperty Name="UseVehicleLevel" ColumnName="UseVehicleLevel" />
+                <ScalarProperty Name="UseVehicleSeatingCapacity" ColumnName="UseVehicleSeatingCapacity" />
+                <ScalarProperty Name="SettlementType" ColumnName="SettlementType" />
+                <ScalarProperty Name="CustomCycleLength" ColumnName="CustomCycleLength" />
+                <ScalarProperty Name="PersonNum" ColumnName="PersonNum" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Intend" ColumnName="Intend" />
+                <ScalarProperty Name="Dartment" ColumnName="Dartment" />
+                <ScalarProperty Name="Passenger" ColumnName="Passenger" />
+                <ScalarProperty Name="Journey" ColumnName="Journey" />
+                <ScalarProperty Name="CarUseCompany" ColumnName="CarUseCompany" />
+                <ScalarProperty Name="PayModel" ColumnName="PayModel" />
+                <ScalarProperty Name="VehicleOrigin" ColumnName="VehicleOrigin" />
+                <ScalarProperty Name="TaskDesc" ColumnName="TaskDesc" />
+                <ScalarProperty Name="StrikePrice" ColumnName="StrikePrice" />
+                <ScalarProperty Name="OrderOffer" ColumnName="OrderOffer" />
+                <ScalarProperty Name="CollectFees" ColumnName="CollectFees" />
+                <ScalarProperty Name="PreEndTime" ColumnName="PreEndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="TestDBModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="UserBaseID" ColumnName="UserBaseID" />
+                <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+                <ScalarProperty Name="StaffWorkInfoID" ColumnName="StaffWorkInfoID" />
+                <ScalarProperty Name="UserPhotoPath" ColumnName="UserPhotoPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserBase">
+            <EntityTypeMapping TypeName="TestDBModel.UserBase">
+              <MappingFragment StoreEntitySet="UserBase">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Heitht" ColumnName="Heitht" />
+                <ScalarProperty Name="Weitht" ColumnName="Weitht" />
+                <ScalarProperty Name="Identification" ColumnName="Identification" />
+                <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ValuationRulesInfo">
+            <EntityTypeMapping TypeName="TestDBModel.ValuationRulesInfo">
+              <MappingFragment StoreEntitySet="ValuationRulesInfo">
+                <ScalarProperty Name="ValuationRulesID" ColumnName="ValuationRulesID" />
+                <ScalarProperty Name="BelongsLeaseID" ColumnName="BelongsLeaseID" />
+                <ScalarProperty Name="ValuationRulesName" ColumnName="ValuationRulesName" />
+                <ScalarProperty Name="ValuationObject" ColumnName="ValuationObject" />
+                <ScalarProperty Name="ValuationTime" ColumnName="ValuationTime" />
+                <ScalarProperty Name="ServerDays" ColumnName="ServerDays" />
+                <ScalarProperty Name="ServerTime" ColumnName="ServerTime" />
+                <ScalarProperty Name="ServerMileage" ColumnName="ServerMileage" />
+                <ScalarProperty Name="ExcessiveOvertimeUnitPrice" ColumnName="ExcessiveOvertimeUnitPrice" />
+                <ScalarProperty Name="OverMileageCalculateWay" ColumnName="OverMileageCalculateWay" />
+                <ScalarProperty Name="SuperMileageUnitPrice" ColumnName="SuperMileageUnitPrice" />
+                <ScalarProperty Name="RoadTollCalculateWay" ColumnName="RoadTollCalculateWay" />
+                <ScalarProperty Name="CustomersUsers" ColumnName="CustomersUsers" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="BaseRent" ColumnName="BaseRent" />
+                <ScalarProperty Name="ParkingFeeCalculateWay" ColumnName="ParkingFeeCalculateWay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicle">
+            <EntityTypeMapping TypeName="TestDBModel.Vehicle">
+              <MappingFragment StoreEntitySet="Vehicle">
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="LicenseNum" ColumnName="LicenseNum" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="VehicleModel" ColumnName="VehicleModel" />
+                <ScalarProperty Name="VehicleSource" ColumnName="VehicleSource" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="VehicleBelong" ColumnName="VehicleBelong" />
+                <ScalarProperty Name="GovLeaseID" ColumnName="GovLeaseID" />
+                <ScalarProperty Name="VehicleDate" ColumnName="VehicleDate" />
+                <ScalarProperty Name="WPVehicleBelong" ColumnName="WPVehicleBelong" />
+                <ScalarProperty Name="WPGovLeaseID" ColumnName="WPGovLeaseID" />
+                <ScalarProperty Name="WPVehicleDate" ColumnName="WPVehicleDate" />
+                <ScalarProperty Name="SeatingCapacity" ColumnName="SeatingCapacity" />
+                <ScalarProperty Name="FuelType" ColumnName="FuelType" />
+                <ScalarProperty Name="FuelCost" ColumnName="FuelCost" />
+                <ScalarProperty Name="GasDisplacement" ColumnName="GasDisplacement" />
+                <ScalarProperty Name="ServicedLife" ColumnName="ServicedLife" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="RemainValue" ColumnName="RemainValue" />
+                <ScalarProperty Name="VehiclePhotoPath" ColumnName="VehiclePhotoPath" />
+                <ScalarProperty Name="EnableBusinessClassList" ColumnName="EnableBusinessClassList" />
+                <ScalarProperty Name="VehicleProperty" ColumnName="VehicleProperty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleBrandValuation">
+            <EntityTypeMapping TypeName="TestDBModel.VehicleBrandValuation">
+              <MappingFragment StoreEntitySet="VehicleBrandValuation">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VehicleBelong" ColumnName="VehicleBelong" />
+                <ScalarProperty Name="GovLeaseID" ColumnName="GovLeaseID" />
+                <ScalarProperty Name="VehicleBrand" ColumnName="VehicleBrand" />
+                <ScalarProperty Name="Valuation" ColumnName="Valuation" />
+                <ScalarProperty Name="ActivityFavorable" ColumnName="ActivityFavorable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleDriverRelationship">
+            <EntityTypeMapping TypeName="TestDBModel.VehicleDriverRelationship">
+              <MappingFragment StoreEntitySet="VehicleDriverRelationship">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+                <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+                <ScalarProperty Name="DriverType" ColumnName="DriverType" />
+                <ScalarProperty Name="BindingTime" ColumnName="BindingTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleDriverWorking">
+            <EntityTypeMapping TypeName="TestDBModel.VehicleDriverWorking">
+              <MappingFragment StoreEntitySet="VehicleDriverWorking">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="VehicleDriverType" ColumnName="VehicleDriverType" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+                <ScalarProperty Name="ServingTime" ColumnName="ServingTime" />
+                <ScalarProperty Name="ServingDay" ColumnName="ServingDay" />
+                <ScalarProperty Name="WorkStatus" ColumnName="WorkStatus" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleFixedPay">
+            <EntityTypeMapping TypeName="TestDBModel.VehicleFixedPay">
+              <MappingFragment StoreEntitySet="VehicleFixedPay">
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="PayCurrency" ColumnName="PayCurrency" />
+                <ScalarProperty Name="InsurancePayInfo" ColumnName="InsurancePayInfo" />
+                <ScalarProperty Name="TrafficForcePayInfo" ColumnName="TrafficForcePayInfo" />
+                <ScalarProperty Name="VehicleShipPayInfo" ColumnName="VehicleShipPayInfo" />
+                <ScalarProperty Name="OtherPayInfo" ColumnName="OtherPayInfo" />
+                <ScalarProperty Name="OtherPayDesc" ColumnName="OtherPayDesc" />
+                <ScalarProperty Name="PayDate" ColumnName="PayDate" />
+                <ScalarProperty Name="PayCheckDate" ColumnName="PayCheckDate" />
+                <ScalarProperty Name="NextPayDate" ColumnName="NextPayDate" />
+                <ScalarProperty Name="PayState" ColumnName="PayState" />
+                <ScalarProperty Name="PayDescription" ColumnName="PayDescription" />
+                <ScalarProperty Name="RemindOperateTime" ColumnName="RemindOperateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleHandoverRecord">
+            <EntityTypeMapping TypeName="TestDBModel.VehicleHandoverRecord">
+              <MappingFragment StoreEntitySet="VehicleHandoverRecord">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="LastDriverID" ColumnName="LastDriverID" />
+                <ScalarProperty Name="NowDriverID" ColumnName="NowDriverID" />
+                <ScalarProperty Name="HandoverTime" ColumnName="HandoverTime" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkTableDisplay">
+            <EntityTypeMapping TypeName="TestDBModel.WorkTableDisplay">
+              <MappingFragment StoreEntitySet="WorkTableDisplay">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+                <ScalarProperty Name="MenuListID" ColumnName="MenuListID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="成绩表">
+            <EntityTypeMapping TypeName="TestDBModel.成绩表">
+              <MappingFragment StoreEntitySet="成绩表">
+                <ScalarProperty Name="学号" ColumnName="学号" />
+                <ScalarProperty Name="教师编号" ColumnName="教师编号" />
+                <ScalarProperty Name="课程号" ColumnName="课程号" />
+                <ScalarProperty Name="分数" ColumnName="分数" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="教师表">
+            <EntityTypeMapping TypeName="TestDBModel.教师表">
+              <MappingFragment StoreEntitySet="教师表">
+                <ScalarProperty Name="教师编号" ColumnName="教师编号" />
+                <ScalarProperty Name="姓名" ColumnName="姓名" />
+                <ScalarProperty Name="出生日期" ColumnName="出生日期" />
+                <ScalarProperty Name="性别" ColumnName="性别" />
+                <ScalarProperty Name="院系编号" ColumnName="院系编号" />
+                <ScalarProperty Name="学历" ColumnName="学历" />
+                <ScalarProperty Name="备注" ColumnName="备注" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="课程表">
+            <EntityTypeMapping TypeName="TestDBModel.课程表">
+              <MappingFragment StoreEntitySet="课程表">
+                <ScalarProperty Name="课程号" ColumnName="课程号" />
+                <ScalarProperty Name="课程名" ColumnName="课程名" />
+                <ScalarProperty Name="学分" ColumnName="学分" />
+                <ScalarProperty Name="备注" ColumnName="备注" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="学生表">
+            <EntityTypeMapping TypeName="TestDBModel.学生表">
+              <MappingFragment StoreEntitySet="学生表">
+                <ScalarProperty Name="学号" ColumnName="学号" />
+                <ScalarProperty Name="姓名" ColumnName="姓名" />
+                <ScalarProperty Name="性别" ColumnName="性别" />
+                <ScalarProperty Name="出生日期" ColumnName="出生日期" />
+                <ScalarProperty Name="院系编号" ColumnName="院系编号" />
+                <ScalarProperty Name="专业编号" ColumnName="专业编号" />
+                <ScalarProperty Name="出生地" ColumnName="出生地" />
+                <ScalarProperty Name="政治面貌" ColumnName="政治面貌" />
+                <ScalarProperty Name="备注" ColumnName="备注" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="学生课程表">
+            <EntityTypeMapping TypeName="TestDBModel.学生课程表">
+              <MappingFragment StoreEntitySet="学生课程表">
+                <ScalarProperty Name="课程号" ColumnName="课程号" />
+                <ScalarProperty Name="课程名" ColumnName="课程名" />
+                <ScalarProperty Name="学分" ColumnName="学分" />
+                <ScalarProperty Name="备注" ColumnName="备注" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionName="TestDBModel.Store.SPLIT" FunctionImportName="SPLIT">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TestDBModel.SPLIT_Result">
+                <ScalarProperty Name="val" ColumnName="val" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="book_page" FunctionName="TestDBModel.Store.book_page" />
+          <FunctionImportMapping FunctionImportName="book_temp" FunctionName="TestDBModel.Store.book_temp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TestDBModel.book_temp_Result">
+                <ScalarProperty Name="book_id" ColumnName="book_id" />
+                <ScalarProperty Name="book_name" ColumnName="book_name" />
+                <ScalarProperty Name="book_price" ColumnName="book_price" />
+                <ScalarProperty Name="book_auth" ColumnName="book_auth" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="charBooks" FunctionName="TestDBModel.Store.charBooks">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TestDBModel.charBooks_Result">
+                <ScalarProperty Name="book_id" ColumnName="book_id" />
+                <ScalarProperty Name="book_name" ColumnName="book_name" />
+                <ScalarProperty Name="book_price" ColumnName="book_price" />
+                <ScalarProperty Name="book_auth" ColumnName="book_auth" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="charBooks1" FunctionName="TestDBModel.Store.charBooks1" />
+          <FunctionImportMapping FunctionImportName="getBookId" FunctionName="TestDBModel.Store.getBookId" />
+          <FunctionImportMapping FunctionImportName="proc_get_allBooks" FunctionName="TestDBModel.Store.proc_get_allBooks" />
+          <FunctionImportMapping FunctionImportName="searchBooks" FunctionName="TestDBModel.Store.searchBooks">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TestDBModel.searchBooks_Result">
+                <ScalarProperty Name="book_id" ColumnName="book_id" />
+                <ScalarProperty Name="book_name" ColumnName="book_name" />
+                <ScalarProperty Name="book_price" ColumnName="book_price" />
+                <ScalarProperty Name="book_auth" ColumnName="book_auth" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="searchBooks1" FunctionName="TestDBModel.Store.searchBooks1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TestDBModel.searchBooks1_Result">
+                <ScalarProperty Name="book_id" ColumnName="book_id" />
+                <ScalarProperty Name="book_name" ColumnName="book_name" />
+                <ScalarProperty Name="book_price" ColumnName="book_price" />
+                <ScalarProperty Name="book_auth" ColumnName="book_auth" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

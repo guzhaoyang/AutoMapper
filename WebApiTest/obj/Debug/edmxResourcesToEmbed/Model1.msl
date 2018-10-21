@@ -1,0 +1,1003 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestDBModelStoreContainer" CdmEntityContainer="TestDBEntities">
+    <EntitySetMapping Name="AccountLogin">
+      <EntityTypeMapping TypeName="TestDBModel.AccountLogin">
+        <MappingFragment StoreEntitySet="AccountLogin">
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+          <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+          <ScalarProperty Name="LoginPwd" ColumnName="LoginPwd" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="RecentLoginTime" ColumnName="RecentLoginTime" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="RandomCode" ColumnName="RandomCode" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CreateWay" ColumnName="CreateWay" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="MobilePlatform" ColumnName="MobilePlatform" />
+          <ScalarProperty Name="LoginState" ColumnName="LoginState" />
+          <ScalarProperty Name="Gmd" ColumnName="Gmd" />
+          <ScalarProperty Name="OverdueTime" ColumnName="OverdueTime" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountType">
+      <EntityTypeMapping TypeName="TestDBModel.AccountType">
+        <MappingFragment StoreEntitySet="AccountType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="TypeDescription" ColumnName="TypeDescription" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bill">
+      <EntityTypeMapping TypeName="TestDBModel.Bill">
+        <MappingFragment StoreEntitySet="Bill">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BillType" ColumnName="BillType" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="SettlementType" ColumnName="SettlementType" />
+          <ScalarProperty Name="SettlementTime" ColumnName="SettlementTime" />
+          <ScalarProperty Name="ChargeCurrency" ColumnName="ChargeCurrency" />
+          <ScalarProperty Name="ActualCost" ColumnName="ActualCost" />
+          <ScalarProperty Name="ActualDiscount" ColumnName="ActualDiscount" />
+          <ScalarProperty Name="SettlementProperty" ColumnName="SettlementProperty" />
+          <ScalarProperty Name="OccTime" ColumnName="OccTime" />
+          <ScalarProperty Name="SettlementState" ColumnName="SettlementState" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BillCheckRule">
+      <EntityTypeMapping TypeName="TestDBModel.BillCheckRule">
+        <MappingFragment StoreEntitySet="BillCheckRule">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+          <ScalarProperty Name="CheckRule1" ColumnName="CheckRule1" />
+          <ScalarProperty Name="CheckRule2" ColumnName="CheckRule2" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="books">
+      <EntityTypeMapping TypeName="TestDBModel.books">
+        <MappingFragment StoreEntitySet="books">
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+          <ScalarProperty Name="book_name" ColumnName="book_name" />
+          <ScalarProperty Name="book_price" ColumnName="book_price" />
+          <ScalarProperty Name="book_auth" ColumnName="book_auth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusinessClass">
+      <EntityTypeMapping TypeName="TestDBModel.BusinessClass">
+        <MappingFragment StoreEntitySet="BusinessClass">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientSettlement">
+      <EntityTypeMapping TypeName="TestDBModel.ClientSettlement">
+        <MappingFragment StoreEntitySet="ClientSettlement">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="RuleList" ColumnName="RuleList" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyInfo">
+      <EntityTypeMapping TypeName="TestDBModel.CompanyInfo">
+        <MappingFragment StoreEntitySet="CompanyInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Scale" ColumnName="Scale" />
+          <ScalarProperty Name="Nature" ColumnName="Nature" />
+          <ScalarProperty Name="FoundingTime" ColumnName="FoundingTime" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+          <ScalarProperty Name="ChildIndustry" ColumnName="ChildIndustry" />
+          <ScalarProperty Name="RegisteredCapital" ColumnName="RegisteredCapital" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="JoinTime" ColumnName="JoinTime" />
+          <ScalarProperty Name="ContactNum" ColumnName="ContactNum" />
+          <ScalarProperty Name="ExtendInfoPath" ColumnName="ExtendInfoPath" />
+          <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfigInfo">
+      <EntityTypeMapping TypeName="TestDBModel.ConfigInfo">
+        <MappingFragment StoreEntitySet="ConfigInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ApplicationTime" ColumnName="ApplicationTime" />
+          <ScalarProperty Name="StateUpdateTime" ColumnName="StateUpdateTime" />
+          <ScalarProperty Name="ConfigState" ColumnName="ConfigState" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CooperateRegistInfo">
+      <EntityTypeMapping TypeName="TestDBModel.CooperateRegistInfo">
+        <MappingFragment StoreEntitySet="CooperateRegistInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CooperateServiceInfo">
+      <EntityTypeMapping TypeName="TestDBModel.CooperateServiceInfo">
+        <MappingFragment StoreEntitySet="CooperateServiceInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+          <ScalarProperty Name="RelationshipType" ColumnName="RelationshipType" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRUDModel">
+      <EntityTypeMapping TypeName="TestDBModel.CRUDModel">
+        <MappingFragment StoreEntitySet="CRUDModel">
+          <ScalarProperty Name="课程号" ColumnName="课程号" />
+          <ScalarProperty Name="课程名" ColumnName="课程名" />
+          <ScalarProperty Name="学分" ColumnName="学分" />
+          <ScalarProperty Name="备注" ColumnName="备注" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department">
+      <EntityTypeMapping TypeName="TestDBModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="UpLevelDepartmentID" ColumnName="UpLevelDepartmentID" />
+          <ScalarProperty Name="FoundingTime" ColumnName="FoundingTime" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Driver">
+      <EntityTypeMapping TypeName="TestDBModel.Driver">
+        <MappingFragment StoreEntitySet="Driver">
+          <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="DrivingAge" ColumnName="DrivingAge" />
+          <ScalarProperty Name="DrivingLicenseTypeID" ColumnName="DrivingLicenseTypeID" />
+          <ScalarProperty Name="DriverPhotoPath" ColumnName="DriverPhotoPath" />
+          <ScalarProperty Name="EnableBusinessClass" ColumnName="EnableBusinessClass" />
+          <ScalarProperty Name="IsExistDrunkDrivingRecord" ColumnName="IsExistDrunkDrivingRecord" />
+          <ScalarProperty Name="WPDriverBelong" ColumnName="WPDriverBelong" />
+          <ScalarProperty Name="WPGovLeaseID" ColumnName="WPGovLeaseID" />
+          <ScalarProperty Name="WPDriverDate" ColumnName="WPDriverDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DrivingLicenseType">
+      <EntityTypeMapping TypeName="TestDBModel.DrivingLicenseType">
+        <MappingFragment StoreEntitySet="DrivingLicenseType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DriverLevel" ColumnName="DriverLevel" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ELRelationship">
+      <EntityTypeMapping TypeName="TestDBModel.ELRelationship">
+        <MappingFragment StoreEntitySet="ELRelationship">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CooperateRegID" ColumnName="CooperateRegID" />
+          <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+          <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+          <ScalarProperty Name="ApplicationPartyTBID" ColumnName="ApplicationPartyTBID" />
+          <ScalarProperty Name="ConfigInfoID" ColumnName="ConfigInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enterprise">
+      <EntityTypeMapping TypeName="TestDBModel.Enterprise">
+        <MappingFragment StoreEntitySet="Enterprise">
+          <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+          <ScalarProperty Name="CompanyInfoID" ColumnName="CompanyInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnterpriseBillCheck">
+      <EntityTypeMapping TypeName="TestDBModel.EnterpriseBillCheck">
+        <MappingFragment StoreEntitySet="EnterpriseBillCheck">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BillID" ColumnName="BillID" />
+          <ScalarProperty Name="ApprovalState" ColumnName="ApprovalState" />
+          <ScalarProperty Name="IsConfirmCharge" ColumnName="IsConfirmCharge" />
+          <ScalarProperty Name="LastApprovalConfirmTime" ColumnName="LastApprovalConfirmTime" />
+          <ScalarProperty Name="LastApprovalPersonID" ColumnName="LastApprovalPersonID" />
+          <ScalarProperty Name="ApprovalPersonList" ColumnName="ApprovalPersonList" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnterpriseOrderCheck">
+      <EntityTypeMapping TypeName="TestDBModel.EnterpriseOrderCheck">
+        <MappingFragment StoreEntitySet="EnterpriseOrderCheck">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ApprovalState" ColumnName="ApprovalState" />
+          <ScalarProperty Name="IsPass" ColumnName="IsPass" />
+          <ScalarProperty Name="LastApprovalTime" ColumnName="LastApprovalTime" />
+          <ScalarProperty Name="LastApprovalPersonID" ColumnName="LastApprovalPersonID" />
+          <ScalarProperty Name="ApprovalPersonList" ColumnName="ApprovalPersonList" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EStaffOrderApproval">
+      <EntityTypeMapping TypeName="TestDBModel.EStaffOrderApproval">
+        <MappingFragment StoreEntitySet="EStaffOrderApproval">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ApprovalPermit" ColumnName="ApprovalPermit" />
+          <ScalarProperty Name="PermissionEndTime" ColumnName="PermissionEndTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EStaffOrderPermission">
+      <EntityTypeMapping TypeName="TestDBModel.EStaffOrderPermission">
+        <MappingFragment StoreEntitySet="EStaffOrderPermission">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="OrderPermit" ColumnName="OrderPermit" />
+          <ScalarProperty Name="BanTime" ColumnName="BanTime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EStaffOrderRule">
+      <EntityTypeMapping TypeName="TestDBModel.EStaffOrderRule">
+        <MappingFragment StoreEntitySet="EStaffOrderRule">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="OrderBusinessClassList" ColumnName="OrderBusinessClassList" />
+          <ScalarProperty Name="OrderVehicleLevelList" ColumnName="OrderVehicleLevelList" />
+          <ScalarProperty Name="IsDirToLeasingCompany" ColumnName="IsDirToLeasingCompany" />
+          <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+          <ScalarProperty Name="SettlementTypeList" ColumnName="SettlementTypeList" />
+          <ScalarProperty Name="CustomCycleLengthMax" ColumnName="CustomCycleLengthMax" />
+          <ScalarProperty Name="IsNeedApproval" ColumnName="IsNeedApproval" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EStaffUseInfo">
+      <EntityTypeMapping TypeName="TestDBModel.EStaffUseInfo">
+        <MappingFragment StoreEntitySet="EStaffUseInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+          <ScalarProperty Name="ActualEndSite" ColumnName="ActualEndSite" />
+          <ScalarProperty Name="IsConfirmTravel" ColumnName="IsConfirmTravel" />
+          <ScalarProperty Name="OccTime" ColumnName="OccTime" />
+          <ScalarProperty Name="SupplementInfoDesc" ColumnName="SupplementInfoDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EStaffUseVehicle">
+      <EntityTypeMapping TypeName="TestDBModel.EStaffUseVehicle">
+        <MappingFragment StoreEntitySet="EStaffUseVehicle">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IsPermitUse" ColumnName="IsPermitUse" />
+          <ScalarProperty Name="IsUsing" ColumnName="IsUsing" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="LastUseTime" ColumnName="LastUseTime" />
+          <ScalarProperty Name="NextUseTime" ColumnName="NextUseTime" />
+          <ScalarProperty Name="CurMonthTimes" ColumnName="CurMonthTimes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Information">
+      <EntityTypeMapping TypeName="TestDBModel.Information">
+        <MappingFragment StoreEntitySet="Information">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="InfoType" ColumnName="InfoType" />
+          <ScalarProperty Name="InfoSenderID" ColumnName="InfoSenderID" />
+          <ScalarProperty Name="SenderType" ColumnName="SenderType" />
+          <ScalarProperty Name="InfoRecverID" ColumnName="InfoRecverID" />
+          <ScalarProperty Name="RecverType" ColumnName="RecverType" />
+          <ScalarProperty Name="InfoOperation" ColumnName="InfoOperation" />
+          <ScalarProperty Name="InfoDesc" ColumnName="InfoDesc" />
+          <ScalarProperty Name="OccTime" ColumnName="OccTime" />
+          <ScalarProperty Name="SenderDelFlag" ColumnName="SenderDelFlag" />
+          <ScalarProperty Name="RecverDelFlag" ColumnName="RecverDelFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCBillAutoConfirm">
+      <EntityTypeMapping TypeName="TestDBModel.LCBillAutoConfirm">
+        <MappingFragment StoreEntitySet="LCBillAutoConfirm">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ELRelationshipID" ColumnName="ELRelationshipID" />
+          <ScalarProperty Name="IsAutoConfirm" ColumnName="IsAutoConfirm" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCSettlementRule">
+      <EntityTypeMapping TypeName="TestDBModel.LCSettlementRule">
+        <MappingFragment StoreEntitySet="LCSettlementRule">
+          <ScalarProperty Name="IDme" ColumnName="IDme" />
+          <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+          <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+          <ScalarProperty Name="CustomCycleLengthMax" ColumnName="CustomCycleLengthMax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCStaff">
+      <EntityTypeMapping TypeName="TestDBModel.LCStaff">
+        <MappingFragment StoreEntitySet="LCStaff">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserBaseID" ColumnName="UserBaseID" />
+          <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+          <ScalarProperty Name="StaffWorkInfoID" ColumnName="StaffWorkInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCValuation">
+      <EntityTypeMapping TypeName="TestDBModel.LCValuation">
+        <MappingFragment StoreEntitySet="LCValuation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+          <ScalarProperty Name="ValuationCurrency" ColumnName="ValuationCurrency" />
+          <ScalarProperty Name="FavorableCurrency" ColumnName="FavorableCurrency" />
+          <ScalarProperty Name="ValuationFormula" ColumnName="ValuationFormula" />
+          <ScalarProperty Name="BaseValuation" ColumnName="BaseValuation" />
+          <ScalarProperty Name="VehicleLevelValuation" ColumnName="VehicleLevelValuation" />
+          <ScalarProperty Name="VehicleTypeValuation" ColumnName="VehicleTypeValuation" />
+          <ScalarProperty Name="VehicleSLifeValuation" ColumnName="VehicleSLifeValuation" />
+          <ScalarProperty Name="UVTimeValuation" ColumnName="UVTimeValuation" />
+          <ScalarProperty Name="UVDayValuation" ColumnName="UVDayValuation" />
+          <ScalarProperty Name="UVBCValuation" ColumnName="UVBCValuation" />
+          <ScalarProperty Name="ActivityStartTime" ColumnName="ActivityStartTime" />
+          <ScalarProperty Name="ActivityEndTime" ColumnName="ActivityEndTime" />
+          <ScalarProperty Name="ConsumeReductionRule" ColumnName="ConsumeReductionRule" />
+          <ScalarProperty Name="ActivityUVLevelFavorable" ColumnName="ActivityUVLevelFavorable" />
+          <ScalarProperty Name="ActivityUVTypeFavorable" ColumnName="ActivityUVTypeFavorable" />
+          <ScalarProperty Name="ActivityUVTimeFavorable" ColumnName="ActivityUVTimeFavorable" />
+          <ScalarProperty Name="ActivityUVDayFavorable" ColumnName="ActivityUVDayFavorable" />
+          <ScalarProperty Name="UVBCFavorable" ColumnName="UVBCFavorable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeasingCompany">
+      <EntityTypeMapping TypeName="TestDBModel.LeasingCompany">
+        <MappingFragment StoreEntitySet="LeasingCompany">
+          <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+          <ScalarProperty Name="CompanyInfoID" ColumnName="CompanyInfoID" />
+          <ScalarProperty Name="VehicleNum" ColumnName="VehicleNum" />
+          <ScalarProperty Name="AvableVehicleNum" ColumnName="AvableVehicleNum" />
+          <ScalarProperty Name="DriverNum" ColumnName="DriverNum" />
+          <ScalarProperty Name="AvableDriverNum" ColumnName="AvableDriverNum" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeasingCompanyGroup">
+      <EntityTypeMapping TypeName="TestDBModel.LeasingCompanyGroup">
+        <MappingFragment StoreEntitySet="LeasingCompanyGroup">
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginRelationship">
+      <EntityTypeMapping TypeName="TestDBModel.LoginRelationship">
+        <MappingFragment StoreEntitySet="LoginRelationship">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AccountLoginID" ColumnName="AccountLoginID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LongRentDriverInfo">
+      <EntityTypeMapping TypeName="TestDBModel.LongRentDriverInfo">
+        <MappingFragment StoreEntitySet="LongRentDriverInfo">
+          <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+          <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+          <ScalarProperty Name="PLeasingCompanyID" ColumnName="PLeasingCompanyID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="PEnterpriseID" ColumnName="PEnterpriseID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DriverNum" ColumnName="DriverNum" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LongRentVehicleInfo">
+      <EntityTypeMapping TypeName="TestDBModel.LongRentVehicleInfo">
+        <MappingFragment StoreEntitySet="LongRentVehicleInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+          <ScalarProperty Name="PLeasingCompanyID" ColumnName="PLeasingCompanyID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="PEnterpriseID" ColumnName="PEnterpriseID" />
+          <ScalarProperty Name="LicenseNum" ColumnName="LicenseNum" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="VehicleBelong" ColumnName="VehicleBelong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LPRelationship">
+      <EntityTypeMapping TypeName="TestDBModel.LPRelationship">
+        <MappingFragment StoreEntitySet="LPRelationship">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CooperateRegID" ColumnName="CooperateRegID" />
+          <ScalarProperty Name="LeasingCompanyID" ColumnName="LeasingCompanyID" />
+          <ScalarProperty Name="PartnerLeasingCompanyID" ColumnName="PartnerLeasingCompanyID" />
+          <ScalarProperty Name="ApplicationPartyLCID" ColumnName="ApplicationPartyLCID" />
+          <ScalarProperty Name="ConfigInfoID" ColumnName="ConfigInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuList">
+      <EntityTypeMapping TypeName="TestDBModel.MenuList">
+        <MappingFragment StoreEntitySet="MenuList">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MenuItemName" ColumnName="MenuItemName" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfflineBillCharge">
+      <EntityTypeMapping TypeName="TestDBModel.OfflineBillCharge">
+        <MappingFragment StoreEntitySet="OfflineBillCharge">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PayPartyID" ColumnName="PayPartyID" />
+          <ScalarProperty Name="ChargePartyType" ColumnName="ChargePartyType" />
+          <ScalarProperty Name="ChargePartyID" ColumnName="ChargePartyID" />
+          <ScalarProperty Name="BillType" ColumnName="BillType" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="AmountDue" ColumnName="AmountDue" />
+          <ScalarProperty Name="ActualCost" ColumnName="ActualCost" />
+          <ScalarProperty Name="ActualDiscount" ColumnName="ActualDiscount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PayChargeTime" ColumnName="PayChargeTime" />
+          <ScalarProperty Name="InDBTime" ColumnName="InDBTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderCheckRule">
+      <EntityTypeMapping TypeName="TestDBModel.OrderCheckRule">
+        <MappingFragment StoreEntitySet="OrderCheckRule">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+          <ScalarProperty Name="CheckRule1" ColumnName="CheckRule1" />
+          <ScalarProperty Name="CheckRule2" ColumnName="CheckRule2" />
+          <ScalarProperty Name="CheckRule3" ColumnName="CheckRule3" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderImplementRule">
+      <EntityTypeMapping TypeName="TestDBModel.OrderImplementRule">
+        <MappingFragment StoreEntitySet="OrderImplementRule">
+          <ScalarProperty Name="RuleID" ColumnName="RuleID" />
+          <ScalarProperty Name="RuleDescription" ColumnName="RuleDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderInfo">
+      <EntityTypeMapping TypeName="TestDBModel.OrderInfo">
+        <MappingFragment StoreEntitySet="OrderInfo">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="UseCarInfoID" ColumnName="UseCarInfoID" />
+          <ScalarProperty Name="Applicant" ColumnName="Applicant" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="CustomCycleLength" ColumnName="CustomCycleLength" />
+          <ScalarProperty Name="OccTime" ColumnName="OccTime" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="VDRID" ColumnName="VDRID" />
+          <ScalarProperty Name="OrderState" ColumnName="OrderState" />
+          <ScalarProperty Name="OrderMode" ColumnName="OrderMode" />
+          <ScalarProperty Name="StateUpdateTime" ColumnName="StateUpdateTime" />
+          <ScalarProperty Name="EContactStatue" ColumnName="EContactStatue" />
+          <ScalarProperty Name="LContactStatue" ColumnName="LContactStatue" />
+          <ScalarProperty Name="LVehicleOrigin" ColumnName="LVehicleOrigin" />
+          <ScalarProperty Name="EVehicleOrigin" ColumnName="EVehicleOrigin" />
+          <ScalarProperty Name="ActuallyVehicleID" ColumnName="ActuallyVehicleID" />
+          <ScalarProperty Name="ActuallyDriverID" ColumnName="ActuallyDriverID" />
+          <ScalarProperty Name="OrderProperty" ColumnName="OrderProperty" />
+          <ScalarProperty Name="ActualStartSite" ColumnName="ActualStartSite" />
+          <ScalarProperty Name="ActualStartSitelongitude" ColumnName="ActualStartSitelongitude" />
+          <ScalarProperty Name="ActualStartSitelatitude" ColumnName="ActualStartSitelatitude" />
+          <ScalarProperty Name="ActualEndSite" ColumnName="ActualEndSite" />
+          <ScalarProperty Name="ActualEndSitelongitude" ColumnName="ActualEndSitelongitude" />
+          <ScalarProperty Name="ActualEndSitelatitude" ColumnName="ActualEndSitelatitude" />
+          <ScalarProperty Name="StartKm" ColumnName="StartKm" />
+          <ScalarProperty Name="EndKm" ColumnName="EndKm" />
+          <ScalarProperty Name="TotalMoney" ColumnName="TotalMoney" />
+          <ScalarProperty Name="BillID" ColumnName="BillID" />
+          <ScalarProperty Name="CheckStatue" ColumnName="CheckStatue" />
+          <ScalarProperty Name="BillCheckStatue" ColumnName="BillCheckStatue" />
+          <ScalarProperty Name="OrderCompanyID" ColumnName="OrderCompanyID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderLocation">
+      <EntityTypeMapping TypeName="TestDBModel.OrderLocation">
+        <MappingFragment StoreEntitySet="OrderLocation">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LocPointName" ColumnName="LocPointName" />
+          <ScalarProperty Name="RemainTime" ColumnName="RemainTime" />
+          <ScalarProperty Name="OccTime" ColumnName="OccTime" />
+          <ScalarProperty Name="InitiativeReportOrNot" ColumnName="InitiativeReportOrNot" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderLocationHistory">
+      <EntityTypeMapping TypeName="TestDBModel.OrderLocationHistory">
+        <MappingFragment StoreEntitySet="OrderLocationHistory">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LocPointName" ColumnName="LocPointName" />
+          <ScalarProperty Name="OccTime" ColumnName="OccTime" />
+          <ScalarProperty Name="InitiativeReportOrNot" ColumnName="InitiativeReportOrNot" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderVehicleTravel">
+      <EntityTypeMapping TypeName="TestDBModel.OrderVehicleTravel">
+        <MappingFragment StoreEntitySet="OrderVehicleTravel">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OccTime" ColumnName="OccTime" />
+          <ScalarProperty Name="TollCharge" ColumnName="TollCharge" />
+          <ScalarProperty Name="OilCharge" ColumnName="OilCharge" />
+          <ScalarProperty Name="ParkingCharge" ColumnName="ParkingCharge" />
+          <ScalarProperty Name="OtherCharge" ColumnName="OtherCharge" />
+          <ScalarProperty Name="OtherChargeDescription" ColumnName="OtherChargeDescription" />
+          <ScalarProperty Name="OilMass" ColumnName="OilMass" />
+          <ScalarProperty Name="Oil" ColumnName="Oil" />
+          <ScalarProperty Name="ParkingCategory" ColumnName="ParkingCategory" />
+          <ScalarProperty Name="TollCategory" ColumnName="TollCategory" />
+          <ScalarProperty Name="WaitingTime" ColumnName="WaitingTime" />
+          <ScalarProperty Name="TicketCount" ColumnName="TicketCount" />
+          <ScalarProperty Name="StoppingPlace" ColumnName="StoppingPlace" />
+          <ScalarProperty Name="WayPlace" ColumnName="WayPlace" />
+          <ScalarProperty Name="Overtime" ColumnName="Overtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlatformLogin">
+      <EntityTypeMapping TypeName="TestDBModel.PlatformLogin">
+        <MappingFragment StoreEntitySet="PlatformLogin">
+          <ScalarProperty Name="PLoginID" ColumnName="PLoginID" />
+          <ScalarProperty Name="PLoginPwd" ColumnName="PLoginPwd" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="RecentLoginTime" ColumnName="RecentLoginTime" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Position">
+      <EntityTypeMapping TypeName="TestDBModel.Position">
+        <MappingFragment StoreEntitySet="Position">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+          <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SettlementRule">
+      <EntityTypeMapping TypeName="TestDBModel.SettlementRule">
+        <MappingFragment StoreEntitySet="SettlementRule">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RuleDescription" ColumnName="RuleDescription" />
+          <ScalarProperty Name="CustomCycleLengthMax" ColumnName="CustomCycleLengthMax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShowPermission">
+      <EntityTypeMapping TypeName="TestDBModel.ShowPermission">
+        <MappingFragment StoreEntitySet="ShowPermission">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MenuListID" ColumnName="MenuListID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StaffWorkInfo">
+      <EntityTypeMapping TypeName="TestDBModel.StaffWorkInfo">
+        <MappingFragment StoreEntitySet="StaffWorkInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="WorkAge" ColumnName="WorkAge" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="UpLevelStaffID" ColumnName="UpLevelStaffID" />
+          <ScalarProperty Name="EntryTime" ColumnName="EntryTime" />
+          <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+          <ScalarProperty Name="InJobState" ColumnName="InJobState" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Station" ColumnName="Station" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeBelongs">
+      <EntityTypeMapping TypeName="TestDBModel.TypeBelongs">
+        <MappingFragment StoreEntitySet="TypeBelongs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UseCarInfo">
+      <EntityTypeMapping TypeName="TestDBModel.UseCarInfo">
+        <MappingFragment StoreEntitySet="UseCarInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UseVehicleMode" ColumnName="UseVehicleMode" />
+          <ScalarProperty Name="Origin" ColumnName="Origin" />
+          <ScalarProperty Name="OriginLongitude" ColumnName="OriginLongitude" />
+          <ScalarProperty Name="OriginLatitude" ColumnName="OriginLatitude" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="DestinationLongitude" ColumnName="DestinationLongitude" />
+          <ScalarProperty Name="DestinationLatitude" ColumnName="DestinationLatitude" />
+          <ScalarProperty Name="DepartTime" ColumnName="DepartTime" />
+          <ScalarProperty Name="UseVehicleDate" ColumnName="UseVehicleDate" />
+          <ScalarProperty Name="UseVehicleType" ColumnName="UseVehicleType" />
+          <ScalarProperty Name="UseVehicleLevel" ColumnName="UseVehicleLevel" />
+          <ScalarProperty Name="UseVehicleSeatingCapacity" ColumnName="UseVehicleSeatingCapacity" />
+          <ScalarProperty Name="SettlementType" ColumnName="SettlementType" />
+          <ScalarProperty Name="PersonNum" ColumnName="PersonNum" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Intend" ColumnName="Intend" />
+          <ScalarProperty Name="Dartment" ColumnName="Dartment" />
+          <ScalarProperty Name="Passenger" ColumnName="Passenger" />
+          <ScalarProperty Name="Journey" ColumnName="Journey" />
+          <ScalarProperty Name="CarUseCompany" ColumnName="CarUseCompany" />
+          <ScalarProperty Name="PayModel" ColumnName="PayModel" />
+          <ScalarProperty Name="TaskDesc" ColumnName="TaskDesc" />
+          <ScalarProperty Name="StrikePrice" ColumnName="StrikePrice" />
+          <ScalarProperty Name="OrderOffer" ColumnName="OrderOffer" />
+          <ScalarProperty Name="CollectFees" ColumnName="CollectFees" />
+          <ScalarProperty Name="PriceWay" ColumnName="PriceWay" />
+          <ScalarProperty Name="PreEndTime" ColumnName="PreEndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UseCarInfo2">
+      <EntityTypeMapping TypeName="TestDBModel.UseCarInfo2">
+        <MappingFragment StoreEntitySet="UseCarInfo2">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UseVehicleMode" ColumnName="UseVehicleMode" />
+          <ScalarProperty Name="Origin" ColumnName="Origin" />
+          <ScalarProperty Name="OriginLongitude" ColumnName="OriginLongitude" />
+          <ScalarProperty Name="OriginLatitude" ColumnName="OriginLatitude" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="DestinationLongitude" ColumnName="DestinationLongitude" />
+          <ScalarProperty Name="DestinationLatitude" ColumnName="DestinationLatitude" />
+          <ScalarProperty Name="DepartTime" ColumnName="DepartTime" />
+          <ScalarProperty Name="UseVehicleDate" ColumnName="UseVehicleDate" />
+          <ScalarProperty Name="UseVehicleType" ColumnName="UseVehicleType" />
+          <ScalarProperty Name="UseVehicleLevel" ColumnName="UseVehicleLevel" />
+          <ScalarProperty Name="UseVehicleSeatingCapacity" ColumnName="UseVehicleSeatingCapacity" />
+          <ScalarProperty Name="SettlementType" ColumnName="SettlementType" />
+          <ScalarProperty Name="CustomCycleLength" ColumnName="CustomCycleLength" />
+          <ScalarProperty Name="PersonNum" ColumnName="PersonNum" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Intend" ColumnName="Intend" />
+          <ScalarProperty Name="Dartment" ColumnName="Dartment" />
+          <ScalarProperty Name="Passenger" ColumnName="Passenger" />
+          <ScalarProperty Name="Journey" ColumnName="Journey" />
+          <ScalarProperty Name="CarUseCompany" ColumnName="CarUseCompany" />
+          <ScalarProperty Name="PayModel" ColumnName="PayModel" />
+          <ScalarProperty Name="VehicleOrigin" ColumnName="VehicleOrigin" />
+          <ScalarProperty Name="TaskDesc" ColumnName="TaskDesc" />
+          <ScalarProperty Name="StrikePrice" ColumnName="StrikePrice" />
+          <ScalarProperty Name="OrderOffer" ColumnName="OrderOffer" />
+          <ScalarProperty Name="CollectFees" ColumnName="CollectFees" />
+          <ScalarProperty Name="PreEndTime" ColumnName="PreEndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="TestDBModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="UserBaseID" ColumnName="UserBaseID" />
+          <ScalarProperty Name="EnterpriseID" ColumnName="EnterpriseID" />
+          <ScalarProperty Name="StaffWorkInfoID" ColumnName="StaffWorkInfoID" />
+          <ScalarProperty Name="UserPhotoPath" ColumnName="UserPhotoPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserBase">
+      <EntityTypeMapping TypeName="TestDBModel.UserBase">
+        <MappingFragment StoreEntitySet="UserBase">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Heitht" ColumnName="Heitht" />
+          <ScalarProperty Name="Weitht" ColumnName="Weitht" />
+          <ScalarProperty Name="Identification" ColumnName="Identification" />
+          <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ValuationRulesInfo">
+      <EntityTypeMapping TypeName="TestDBModel.ValuationRulesInfo">
+        <MappingFragment StoreEntitySet="ValuationRulesInfo">
+          <ScalarProperty Name="ValuationRulesID" ColumnName="ValuationRulesID" />
+          <ScalarProperty Name="BelongsLeaseID" ColumnName="BelongsLeaseID" />
+          <ScalarProperty Name="ValuationRulesName" ColumnName="ValuationRulesName" />
+          <ScalarProperty Name="ValuationObject" ColumnName="ValuationObject" />
+          <ScalarProperty Name="ValuationTime" ColumnName="ValuationTime" />
+          <ScalarProperty Name="ServerDays" ColumnName="ServerDays" />
+          <ScalarProperty Name="ServerTime" ColumnName="ServerTime" />
+          <ScalarProperty Name="ServerMileage" ColumnName="ServerMileage" />
+          <ScalarProperty Name="ExcessiveOvertimeUnitPrice" ColumnName="ExcessiveOvertimeUnitPrice" />
+          <ScalarProperty Name="OverMileageCalculateWay" ColumnName="OverMileageCalculateWay" />
+          <ScalarProperty Name="SuperMileageUnitPrice" ColumnName="SuperMileageUnitPrice" />
+          <ScalarProperty Name="RoadTollCalculateWay" ColumnName="RoadTollCalculateWay" />
+          <ScalarProperty Name="CustomersUsers" ColumnName="CustomersUsers" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="BaseRent" ColumnName="BaseRent" />
+          <ScalarProperty Name="ParkingFeeCalculateWay" ColumnName="ParkingFeeCalculateWay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicle">
+      <EntityTypeMapping TypeName="TestDBModel.Vehicle">
+        <MappingFragment StoreEntitySet="Vehicle">
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="LicenseNum" ColumnName="LicenseNum" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="VehicleModel" ColumnName="VehicleModel" />
+          <ScalarProperty Name="VehicleSource" ColumnName="VehicleSource" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="VehicleBelong" ColumnName="VehicleBelong" />
+          <ScalarProperty Name="GovLeaseID" ColumnName="GovLeaseID" />
+          <ScalarProperty Name="VehicleDate" ColumnName="VehicleDate" />
+          <ScalarProperty Name="WPVehicleBelong" ColumnName="WPVehicleBelong" />
+          <ScalarProperty Name="WPGovLeaseID" ColumnName="WPGovLeaseID" />
+          <ScalarProperty Name="WPVehicleDate" ColumnName="WPVehicleDate" />
+          <ScalarProperty Name="SeatingCapacity" ColumnName="SeatingCapacity" />
+          <ScalarProperty Name="FuelType" ColumnName="FuelType" />
+          <ScalarProperty Name="FuelCost" ColumnName="FuelCost" />
+          <ScalarProperty Name="GasDisplacement" ColumnName="GasDisplacement" />
+          <ScalarProperty Name="ServicedLife" ColumnName="ServicedLife" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="RemainValue" ColumnName="RemainValue" />
+          <ScalarProperty Name="VehiclePhotoPath" ColumnName="VehiclePhotoPath" />
+          <ScalarProperty Name="EnableBusinessClassList" ColumnName="EnableBusinessClassList" />
+          <ScalarProperty Name="VehicleProperty" ColumnName="VehicleProperty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleBrandValuation">
+      <EntityTypeMapping TypeName="TestDBModel.VehicleBrandValuation">
+        <MappingFragment StoreEntitySet="VehicleBrandValuation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VehicleBelong" ColumnName="VehicleBelong" />
+          <ScalarProperty Name="GovLeaseID" ColumnName="GovLeaseID" />
+          <ScalarProperty Name="VehicleBrand" ColumnName="VehicleBrand" />
+          <ScalarProperty Name="Valuation" ColumnName="Valuation" />
+          <ScalarProperty Name="ActivityFavorable" ColumnName="ActivityFavorable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleDriverRelationship">
+      <EntityTypeMapping TypeName="TestDBModel.VehicleDriverRelationship">
+        <MappingFragment StoreEntitySet="VehicleDriverRelationship">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+          <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="DriverType" ColumnName="DriverType" />
+          <ScalarProperty Name="BindingTime" ColumnName="BindingTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleDriverWorking">
+      <EntityTypeMapping TypeName="TestDBModel.VehicleDriverWorking">
+        <MappingFragment StoreEntitySet="VehicleDriverWorking">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="VehicleDriverType" ColumnName="VehicleDriverType" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="TypeBelongsID" ColumnName="TypeBelongsID" />
+          <ScalarProperty Name="ServingTime" ColumnName="ServingTime" />
+          <ScalarProperty Name="ServingDay" ColumnName="ServingDay" />
+          <ScalarProperty Name="WorkStatus" ColumnName="WorkStatus" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleFixedPay">
+      <EntityTypeMapping TypeName="TestDBModel.VehicleFixedPay">
+        <MappingFragment StoreEntitySet="VehicleFixedPay">
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="PayCurrency" ColumnName="PayCurrency" />
+          <ScalarProperty Name="InsurancePayInfo" ColumnName="InsurancePayInfo" />
+          <ScalarProperty Name="TrafficForcePayInfo" ColumnName="TrafficForcePayInfo" />
+          <ScalarProperty Name="VehicleShipPayInfo" ColumnName="VehicleShipPayInfo" />
+          <ScalarProperty Name="OtherPayInfo" ColumnName="OtherPayInfo" />
+          <ScalarProperty Name="OtherPayDesc" ColumnName="OtherPayDesc" />
+          <ScalarProperty Name="PayDate" ColumnName="PayDate" />
+          <ScalarProperty Name="PayCheckDate" ColumnName="PayCheckDate" />
+          <ScalarProperty Name="NextPayDate" ColumnName="NextPayDate" />
+          <ScalarProperty Name="PayState" ColumnName="PayState" />
+          <ScalarProperty Name="PayDescription" ColumnName="PayDescription" />
+          <ScalarProperty Name="RemindOperateTime" ColumnName="RemindOperateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleHandoverRecord">
+      <EntityTypeMapping TypeName="TestDBModel.VehicleHandoverRecord">
+        <MappingFragment StoreEntitySet="VehicleHandoverRecord">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="LastDriverID" ColumnName="LastDriverID" />
+          <ScalarProperty Name="NowDriverID" ColumnName="NowDriverID" />
+          <ScalarProperty Name="HandoverTime" ColumnName="HandoverTime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkTableDisplay">
+      <EntityTypeMapping TypeName="TestDBModel.WorkTableDisplay">
+        <MappingFragment StoreEntitySet="WorkTableDisplay">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+          <ScalarProperty Name="MenuListID" ColumnName="MenuListID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="成绩表">
+      <EntityTypeMapping TypeName="TestDBModel.成绩表">
+        <MappingFragment StoreEntitySet="成绩表">
+          <ScalarProperty Name="学号" ColumnName="学号" />
+          <ScalarProperty Name="教师编号" ColumnName="教师编号" />
+          <ScalarProperty Name="课程号" ColumnName="课程号" />
+          <ScalarProperty Name="分数" ColumnName="分数" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="教师表">
+      <EntityTypeMapping TypeName="TestDBModel.教师表">
+        <MappingFragment StoreEntitySet="教师表">
+          <ScalarProperty Name="教师编号" ColumnName="教师编号" />
+          <ScalarProperty Name="姓名" ColumnName="姓名" />
+          <ScalarProperty Name="出生日期" ColumnName="出生日期" />
+          <ScalarProperty Name="性别" ColumnName="性别" />
+          <ScalarProperty Name="院系编号" ColumnName="院系编号" />
+          <ScalarProperty Name="学历" ColumnName="学历" />
+          <ScalarProperty Name="备注" ColumnName="备注" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="课程表">
+      <EntityTypeMapping TypeName="TestDBModel.课程表">
+        <MappingFragment StoreEntitySet="课程表">
+          <ScalarProperty Name="课程号" ColumnName="课程号" />
+          <ScalarProperty Name="课程名" ColumnName="课程名" />
+          <ScalarProperty Name="学分" ColumnName="学分" />
+          <ScalarProperty Name="备注" ColumnName="备注" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="学生表">
+      <EntityTypeMapping TypeName="TestDBModel.学生表">
+        <MappingFragment StoreEntitySet="学生表">
+          <ScalarProperty Name="学号" ColumnName="学号" />
+          <ScalarProperty Name="姓名" ColumnName="姓名" />
+          <ScalarProperty Name="性别" ColumnName="性别" />
+          <ScalarProperty Name="出生日期" ColumnName="出生日期" />
+          <ScalarProperty Name="院系编号" ColumnName="院系编号" />
+          <ScalarProperty Name="专业编号" ColumnName="专业编号" />
+          <ScalarProperty Name="出生地" ColumnName="出生地" />
+          <ScalarProperty Name="政治面貌" ColumnName="政治面貌" />
+          <ScalarProperty Name="备注" ColumnName="备注" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="学生课程表">
+      <EntityTypeMapping TypeName="TestDBModel.学生课程表">
+        <MappingFragment StoreEntitySet="学生课程表">
+          <ScalarProperty Name="课程号" ColumnName="课程号" />
+          <ScalarProperty Name="课程名" ColumnName="课程名" />
+          <ScalarProperty Name="学分" ColumnName="学分" />
+          <ScalarProperty Name="备注" ColumnName="备注" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="TestDBModel.Store.SPLIT" FunctionImportName="SPLIT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TestDBModel.SPLIT_Result">
+          <ScalarProperty Name="val" ColumnName="val" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="book_page" FunctionName="TestDBModel.Store.book_page" />
+    <FunctionImportMapping FunctionImportName="book_temp" FunctionName="TestDBModel.Store.book_temp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TestDBModel.book_temp_Result">
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+          <ScalarProperty Name="book_name" ColumnName="book_name" />
+          <ScalarProperty Name="book_price" ColumnName="book_price" />
+          <ScalarProperty Name="book_auth" ColumnName="book_auth" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="charBooks" FunctionName="TestDBModel.Store.charBooks">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TestDBModel.charBooks_Result">
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+          <ScalarProperty Name="book_name" ColumnName="book_name" />
+          <ScalarProperty Name="book_price" ColumnName="book_price" />
+          <ScalarProperty Name="book_auth" ColumnName="book_auth" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="charBooks1" FunctionName="TestDBModel.Store.charBooks1" />
+    <FunctionImportMapping FunctionImportName="getBookId" FunctionName="TestDBModel.Store.getBookId" />
+    <FunctionImportMapping FunctionImportName="proc_get_allBooks" FunctionName="TestDBModel.Store.proc_get_allBooks" />
+    <FunctionImportMapping FunctionImportName="searchBooks" FunctionName="TestDBModel.Store.searchBooks">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TestDBModel.searchBooks_Result">
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+          <ScalarProperty Name="book_name" ColumnName="book_name" />
+          <ScalarProperty Name="book_price" ColumnName="book_price" />
+          <ScalarProperty Name="book_auth" ColumnName="book_auth" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="searchBooks1" FunctionName="TestDBModel.Store.searchBooks1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TestDBModel.searchBooks1_Result">
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+          <ScalarProperty Name="book_name" ColumnName="book_name" />
+          <ScalarProperty Name="book_price" ColumnName="book_price" />
+          <ScalarProperty Name="book_auth" ColumnName="book_auth" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

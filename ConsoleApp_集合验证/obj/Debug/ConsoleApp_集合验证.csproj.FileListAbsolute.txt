@@ -1,0 +1,12 @@
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_集合验证\bin\Debug\ConsoleApp_集合验证.exe.config
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_集合验证\bin\Debug\ConsoleApp_集合验证.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_集合验证\bin\Debug\ConsoleApp_集合验证.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_集合验证\bin\Debug\AutoMapper.dll
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_集合验证\bin\Debug\System.ValueTuple.dll
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_集合验证\bin\Debug\AutoMapper.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_集合验证\bin\Debug\AutoMapper.xml
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_集合验证\bin\Debug\System.ValueTuple.xml
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_集合验证\obj\Debug\ConsoleApp_集合验证.csprojResolveAssemblyReference.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_集合验证\obj\Debug\ConsoleApp_集合验证.csproj.CoreCompileInputs.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_集合验证\obj\Debug\ConsoleApp_集合验证.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_集合验证\obj\Debug\ConsoleApp_集合验证.pdb

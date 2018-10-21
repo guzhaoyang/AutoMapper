@@ -1,0 +1,7 @@
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_抽象工厂\bin\Debug\ConsoleApp_抽象工厂.exe.config
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_抽象工厂\bin\Debug\ConsoleApp_抽象工厂.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_抽象工厂\bin\Debug\ConsoleApp_抽象工厂.pdb
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_抽象工厂\obj\Debug\ConsoleApp_抽象工厂.csprojResolveAssemblyReference.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_抽象工厂\obj\Debug\ConsoleApp_抽象工厂.csproj.CoreCompileInputs.cache
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_抽象工厂\obj\Debug\ConsoleApp_抽象工厂.exe
+E:\StudyAndPractice\C#面向对象练习\面向对象练习\ConsoleApp_抽象工厂\obj\Debug\ConsoleApp_抽象工厂.pdb
